@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GlobalStyles from "./styles/GlobalStyles";
+import Catalog from "./pages/Catalog";
+import CartPage from "./pages/CartPage";
+import { LanguageProvider } from "./contexts";
+import { Header } from "./components/Header";
+import Footer from "./components/Footer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <LanguageProvider>
+    <Router>
+      <GlobalStyles />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Catalog />} />
+        <Route path="/cart" element={<CartPage />} />
+      </Routes>
+      <Footer />
+    </Router>
+  </LanguageProvider>
+);
 
 export default App;
