@@ -26,7 +26,7 @@ export const ProductCard = ({
 }: {
   product: { img: string; title: string; price: number; rate: number };
 }) => (
-  <Card>
+  <>
     <ImageComponent
       className="my-image"
       src={product.img}
@@ -35,7 +35,7 @@ export const ProductCard = ({
     <h3>{product.title}</h3>
     <p>${product.price}</p>
     <p>Rating: {product.rate}</p>
-  </Card>
+  </>
 );
 
 export default ProductCard;

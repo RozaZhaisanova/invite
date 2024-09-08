@@ -1,7 +1,9 @@
 import React from "react";
 import ProductCard from "../ProductCard";
 import { ProductGrid } from "./styles";
+import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import Container from "@mui/material/Container";
@@ -75,10 +77,12 @@ const ProductList = () => (
             bgcolor: "primary.contrastText",
           }}
         >
-          <ProductCard key={index} product={product} />
+          <CardContent>
+            <ProductCard key={index} product={product} />
+          </CardContent>
           <CardActions>
             <Button size="small" variant="outlined">
-              Зарегистрироваться
+              Купить
             </Button>
           </CardActions>
         </Card>
