@@ -5,13 +5,13 @@ import { ProductGrid } from "./styles";
 
 const headphones = [
   {
-    img: "../../assets/1.jpg",
+    img: "./assets/1.jpg",
     title: "Apple BYZ S852I",
     price: 2927,
     rate: 4.7,
   },
   {
-    img: "../../../assets/2.jpg",
+    img: "./assets/2.jpg",
     title: "Sony WH-1000XM4",
     price: 3499,
     rate: 4.8,
@@ -21,6 +21,18 @@ const headphones = [
     title: "Bose QuietComfort 35 II",
     price: 2999,
     rate: 4.6,
+  },
+  {
+    img: "./assets/4.jpg",
+    title: "Huawei pura 70",
+    price: 2879,
+    rate: 4.3,
+  },
+  {
+    img: "./assets/5.jpg",
+    title: "JBL Tune 510WS",
+    price: 2920,
+    rate: 4.4,
   },
 ];
 

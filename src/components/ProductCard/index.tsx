@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-
+interface ImageProps {
+  className?: string;
+  src: string;
+  alt: string;
+}
+const ImageComponent: React.FC<ImageProps> = ({ className, src, alt }) => {
+  return <img className={className} src={src} alt={alt} />;
+};
 const Card = styled.div`
   border: 1px solid #ddd;
   padding: 1rem;
@@ -20,7 +27,11 @@ export const ProductCard = ({
   product: { img: string; title: string; price: number; rate: number };
 }) => (
   <Card>
-    <Image src={product.img} alt={product.title} />
+    <ImageComponent
+      className="my-image"
+      src={product.img}
+      alt={product.title}
+    />
     <h3>{product.title}</h3>
     <p>${product.price}</p>
     <p>Rating: {product.rate}</p>
