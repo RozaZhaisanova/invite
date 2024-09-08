@@ -74,14 +74,13 @@ const ProductList = () => (
             height: "100%",
             display: "flex",
             flexDirection: "column",
-            bgcolor: "primary.contrastText",
           }}
         >
           <CardContent>
             <ProductCard key={index} product={product} />
           </CardContent>
           <CardActions>
-            <Button size="small" variant="outlined">
+            <Button size="small" variant="contained" color="secondary">
               Купить
             </Button>
           </CardActions>
