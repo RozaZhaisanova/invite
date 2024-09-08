@@ -6,7 +6,7 @@ interface ImageProps {
   alt: string;
 }
 const ImageComponent: React.FC<ImageProps> = ({ className, src, alt }) => {
-  return <img className={className} src={src} alt={alt} />;
+  return <Image className={className} src={src} alt={alt} />;
 };
 const Card = styled.div`
   border: 1px solid #ddd;
@@ -19,7 +19,7 @@ const Card = styled.div`
 `;
 const Image = styled.img`
   max-width: 100%;
-  height: auto;
+  max-height: 100%;
 `;
 export const ProductCard = ({
   product,
@@ -35,7 +35,6 @@ export const ProductCard = ({
     <h3>{product.title}</h3>
     <p>${product.price}</p>
     <p>Rating: {product.rate}</p>
-    <button>Add to Cart</button>
   </Card>
 );
 
