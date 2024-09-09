@@ -1,15 +1,12 @@
-import React from "react";
-import ProductList from "../../components/ProductList";
+import React, { useState } from "react";
+import { ProductList } from "../../components/ProductList";
 
-const Catalog = () => (
-  <>
-    <h1>Catalog</h1>
-    <ProductList
-      addToCart={function (price: number): void {
-        throw new Error("Function not implemented.");
-      }}
-    />
-  </>
-);
+const Catalog: React.FC = () => {
+  return (
+    <div className="catalog">
+      <ProductList />
+    </div>
+  );
+};
 
 export default Catalog;

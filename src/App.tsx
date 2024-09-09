@@ -7,6 +7,7 @@ import { LanguageProvider } from "./contexts";
 import { Header } from "./components/Header";
 import Footer from "./components/Footer";
 import styled from "styled-components";
+import { CartProvider } from "./contexts/CartContext";
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,17 +19,19 @@ const MainContent = styled.main`
 const App = () => (
   <AppContainer>
     <LanguageProvider>
-      <Router>
-        <MainContent>
-          <GlobalStyles />
-          <Header />
-          <Routes>
-            <Route path="/" element={<Catalog />} />
-            <Route path="/cart" element={<CartPage />} />
-          </Routes>
-        </MainContent>
-        <Footer />
-      </Router>
+      <CartProvider>
+        <Router>
+          <MainContent>
+            <GlobalStyles />
+            <Header />
+            <Routes>
+              <Route path="/" element={<Catalog />} />
+              <Route path="/cart" element={<CartPage />} />
+            </Routes>
+          </MainContent>
+          <Footer />
+        </Router>
+      </CartProvider>
     </LanguageProvider>
   </AppContainer>
 );

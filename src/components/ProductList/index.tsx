@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
 import { ProductGrid } from "./styles";
 import CardContent from "@mui/material/CardContent";
@@ -7,89 +7,45 @@ import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import Container from "@mui/material/Container";
-import { ProductListProps } from "./interfaces";
+import { getHeadphones } from "../../lib/api";
+import { Product } from "../../lib/types";
 
-const headphones = [
-  {
-    img: "./assets/1.jpg",
-    title: "Apple BYZ S852I",
-    price: 2927,
-    rate: 4.7,
-  },
-  {
-    img: "./assets/2.jpg",
-    title: "Sony WH-1000XM4",
-    price: 3499,
-    rate: 4.8,
-  },
-  {
-    img: "./assets/3.jpg",
-    title: "Bose QuietComfort 35 II",
-    price: 2999,
-    rate: 4.6,
-  },
-  {
-    img: "./assets/4.jpg",
-    title: "Huawei pura 70",
-    price: 2879,
-    rate: 4.3,
-  },
-  {
-    img: "./assets/5.jpg",
-    title: "JBL Tune 510WS",
-    price: 2920,
-    rate: 4.4,
-  },
-  {
-    img: "./assets/6.png",
-    title: "JBL T110",
-    price: 3489,
-    rate: 4.8,
-  },
-  {
-    img: "./assets/7.jpg",
-    title: "Tune 225 tws",
-    price: 3999,
-    rate: 4.9,
-  },
-  {
-    img: "./assets/8.jpg",
-    title: "Tune 120 TWS",
-    price: 3879,
-    rate: 4.2,
-  },
-  {
-    img: "./assets/9.jpg",
-    title: "AirPods pro",
-    price: 3920,
-    rate: 4.4,
-  },
-];
+export const ProductList = () => {
+  const [headphones, setHeadphones] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-const ProductList: React.FC<ProductListProps> = ({ addToCart }) => (
-  <Container component="main" maxWidth="lg">
-    <ProductGrid>
-      {headphones.map((product, index) => (
-        <Card
-          key={index}
-          sx={{
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <CardContent>
-            <ProductCard product={product} addToCart={addToCart} />
-          </CardContent>
-          <CardActions>
-            <Button size="small" variant="contained" color="secondary">
-              Купить
-            </Button>
-          </CardActions>
-        </Card>
-      ))}
-    </ProductGrid>
-  </Container>
-);
-
-export default ProductList;
+  useEffect(() => {
+    const fetchHeadphones = async () => {
+      setIsLoading(true);
+      const fetchedUsers = await getHeadphones();
+      setHeadphones(fetchedUsers);
+      setIsLoading(false);
+    };
+    fetchHeadphones();
+  }, []);
+  return (
+    <Container component="main" maxWidth="lg">
+      <ProductGrid>
+        {headphones.map((product, index) => (
+          <Card
+            key={index}
+            sx={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <CardContent>
+              <ProductCard product={product} />
+            </CardContent>
+            <CardActions>
+              <Button size="small" variant="contained" color="secondary">
+                Купить
+              </Button>
+            </CardActions>
+          </Card>
+        ))}
+      </ProductGrid>
+    </Container>
+  );
+};
