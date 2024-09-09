@@ -4,7 +4,11 @@ import ProductList from "../../components/ProductList";
 const Catalog = () => (
   <>
     <h1>Catalog</h1>
-    <ProductList />
+    <ProductList
+      addToCart={function (price: number): void {
+        throw new Error("Function not implemented.");
+      }}
+    />
   </>
 );
 

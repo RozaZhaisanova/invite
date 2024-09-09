@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-interface ImageProps {
-  className?: string;
-  src: string;
-  alt: string;
-}
+import { ImageProps, ProductCardProps, Product } from "./interfaces";
 const ImageComponent: React.FC<ImageProps> = ({ className, src, alt }) => {
   return <Image className={className} src={src} alt={alt} />;
 };
@@ -21,10 +17,10 @@ const Image = styled.img`
   max-width: 100%;
   max-height: 100%;
 `;
-export const ProductCard = ({
+
+export const ProductCard: React.FC<ProductCardProps> = ({
   product,
-}: {
-  product: { img: string; title: string; price: number; rate: number };
+  addToCart,
 }) => (
   <>
     <ImageComponent
@@ -35,6 +31,7 @@ export const ProductCard = ({
     <h3>{product.title}</h3>
     <p>${product.price}</p>
     <p>Rating: {product.rate}</p>
+    <button onClick={() => addToCart(product.price)}>Купить</button>
   </>
 );
 

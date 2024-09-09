@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import Container from "@mui/material/Container";
+import { ProductListProps } from "./interfaces";
 
 const headphones = [
   {
@@ -65,11 +66,12 @@ const headphones = [
   },
 ];
 
-const ProductList = () => (
+const ProductList: React.FC<ProductListProps> = ({ addToCart }) => (
   <Container component="main" maxWidth="lg">
     <ProductGrid>
       {headphones.map((product, index) => (
         <Card
+          key={index}
           sx={{
             height: "100%",
             display: "flex",
@@ -77,7 +79,7 @@ const ProductList = () => (
           }}
         >
           <CardContent>
-            <ProductCard key={index} product={product} />
+            <ProductCard product={product} addToCart={addToCart} />
           </CardContent>
           <CardActions>
             <Button size="small" variant="contained" color="secondary">
