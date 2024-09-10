@@ -26,9 +26,9 @@ export const ProductList = () => {
   return (
     <Container component="main" maxWidth="lg">
       <ProductGrid>
-        {headphones.map((product, index) => (
+        {headphones.map((product) => (
           <Card
-            key={index}
+            key={product.id}
             sx={{
               height: "100%",
               display: "flex",

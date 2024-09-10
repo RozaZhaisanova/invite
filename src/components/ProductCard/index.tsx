@@ -20,7 +20,7 @@ const Image = styled.img`
 `;
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const { cart, addToCart } = useCart();
+  const { addToCart } = useCart();
   return (
     <>
       <ImageComponent
@@ -31,7 +31,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <h3>{product.title}</h3>
       <p>${product.price}</p>
       <p>Rating: {product.rate}</p>
-      <button onClick={() => addToCart(product.price)}>Купить</button>
+      <button onClick={() => addToCart(product)}>Купить</button>
     </>
   );
 };

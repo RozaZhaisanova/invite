@@ -5,12 +5,10 @@ const CartContainer = styled.div`
   padding: 1rem;
 `;
 const Cart = () => {
-  const { cart } = useCart();
-
   return (
     <CartContainer>
       <h1>Your Cart</h1>
-      itemsCount={cart.itemsCount} totalPrice={cart.totalPrice}
+
       <p>Cart is empty</p>
     </CartContainer>
   );

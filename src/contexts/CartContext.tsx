@@ -1,14 +1,18 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
+import { Product } from "../lib/types";
 
-interface CartState {
-  itemsCount: number;
-  totalPrice: number;
+interface CartItem {
+  product: Product;
+  quantity: number;
 }
 
 interface CartContextType {
-  cart: CartState;
-  addToCart: (price: number) => void;
-  removeFromCart: (price: number) => void;
+  cartItems: Record<number, CartItem>;
+  totalPrice: number;
+  addToCart: (product: Product) => void;
+  increaseQuantity: (id: number) => void;
+  decreaseQuantity: (id: number) => void;
+  removeFromCart: (id: number) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -16,24 +20,76 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [cart, setCart] = useState<CartState>({ itemsCount: 0, totalPrice: 0 });
+  const [cartItems, setCartItems] = useState<Record<number, CartItem>>({});
 
-  const addToCart = (price: number) => {
-    setCart((prev) => ({
-      itemsCount: prev.itemsCount + 1,
-      totalPrice: prev.totalPrice + price,
+  const addToCart = (product: Product) => {
+    setCartItems((prev) => {
+      if (prev[product.id]) {
+        return {
+          ...prev,
+          [product.id]: {
+            ...prev[product.id],
+            quantity: prev[product.id].quantity + 1,
+          },
+        };
+      } else {
+        return {
+          ...prev,
+          [product.id]: { product, quantity: 1 },
+        };
+      }
+    });
+  };
+
+  const increaseQuantity = (id: number) => {
+    setCartItems((prev) => ({
+      ...prev,
+      [id]: {
+        ...prev[id],
+        quantity: prev[id].quantity + 1,
+      },
     }));
   };
 
-  const removeFromCart = (price: number) => {
-    setCart((prev) => ({
-      itemsCount: Math.max(prev.itemsCount - 1, 0),
-      totalPrice: Math.max(prev.totalPrice - price, 0),
-    }));
+  const decreaseQuantity = (id: number) => {
+    setCartItems((prev) => {
+      if (prev[id].quantity === 1) {
+        const { [id]: _, ...rest } = prev; // Удаляем товар, если его количество 1
+        return rest;
+      }
+      return {
+        ...prev,
+        [id]: {
+          ...prev[id],
+          quantity: prev[id].quantity - 1,
+        },
+      };
+    });
   };
+
+  const removeFromCart = (id: number) => {
+    setCartItems((prev) => {
+      const { [id]: _, ...rest } = prev; // Удаляем товар
+      return rest;
+    });
+  };
+
+  const totalPrice = Object.values(cartItems).reduce(
+    (total, item) => total + item.product.price * item.quantity,
+    0
+  );
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        totalPrice,
+        addToCart,
+        increaseQuantity,
+        decreaseQuantity,
+        removeFromCart,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
