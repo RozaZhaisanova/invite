@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ImageProps, ProductCardProps } from "./interfaces";
 import { useCart } from "../../contexts/CartContext";
-import { CardActions, Typography } from "@mui/material";
+import { CardMedia, CardActions, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import StarIcon from "@mui/icons-material/Star";
 import Box, { BoxProps } from "@mui/material/Box";
@@ -49,11 +49,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { addToCart } = useCart();
   return (
     <>
-      <ImageComponent
-        className="my-image"
-        src={product.img}
-        alt={product.title}
-      />
+      <CardMedia
+        sx={{
+          height: "200px", // Фиксированная высота для изображения
+          objectFit: "cover", // Обрезка изображения по размеру
+        }}
+      >
+        <ImageComponent
+          className="my-image"
+          src={product.img}
+          alt={product.title}
+        />
+      </CardMedia>
       <Typography variant="h6">{product.title}</Typography>
       <Typography variant="h6" style={{ color: "#DAA520" }}>
         {product.price}₽
@@ -77,12 +84,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       </Box>
 
       <CardActions>
-        <Button
-          onClick={() => addToCart(product)}
-          size="small"
-          variant="contained"
-          color="secondary"
-        >
+        <Button variant="text" onClick={() => addToCart(product)}>
           Купить
         </Button>
       </CardActions>

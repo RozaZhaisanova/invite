@@ -28,7 +28,7 @@ export const ProductList = () => {
           <Card
             key={product.id}
             sx={{
-              height: "100%",
+              height: "400px",
               display: "flex",
               flexDirection: "column",
             }}

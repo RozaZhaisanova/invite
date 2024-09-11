@@ -12,7 +12,7 @@ export const Header = () => {
       <Logo to="/">Audio Store</Logo>
       <Link to="/cart">
         <Badge badgeContent={Object.keys(cartItems).length} color="secondary">
-          <ShoppingCartIcon color="primary" />
+          <ShoppingCartIcon color="primary" fontSize="medium" />
         </Badge>
       </Link>
     </HeaderStyled>
