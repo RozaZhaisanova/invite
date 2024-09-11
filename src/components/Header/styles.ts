@@ -1,12 +1,11 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #f8f8f8;`
-;
+`;
 
 export const Logo = styled(Link)`
   font-size: 1.5rem;
@@ -15,5 +14,5 @@ export const Logo = styled(Link)`
 
   &:hover {
     color: #007bff;
-  }`
-;
+  }
+`;

@@ -7,7 +7,7 @@ const FooterContainer = styled.footer`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #f1f1f1;
+  background-color: #2a4580;
   border-top: 1px solid #ddd;
 `;
 const LanguageSelector = styled.select`

@@ -11,8 +11,8 @@ export const Header = () => {
     <HeaderStyled>
       <Logo to="/">Audio Store</Logo>
       <Link to="/cart">
-        <Badge badgeContent={Object.keys(cartItems).length} color="primary">
-          <ShoppingCartIcon />
+        <Badge badgeContent={Object.keys(cartItems).length} color="secondary">
+          <ShoppingCartIcon color="primary" />
         </Badge>
       </Link>
     </HeaderStyled>
