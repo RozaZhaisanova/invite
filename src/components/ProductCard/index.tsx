@@ -9,6 +9,7 @@ import Box, { BoxProps } from "@mui/material/Box";
 import { IconButton } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import ProductModal from "../ProductModal";
+
 function Item(props: BoxProps) {
   const { sx, ...other } = props;
   return (
@@ -33,10 +34,11 @@ function Item(props: BoxProps) {
 const ImageComponent: React.FC<ImageProps> = ({ className, src, alt }) => {
   return <Image className={className} src={src} alt={alt} />;
 };
+
 const Card = styled.div`
   border: 1px solid #ddd;
   padding: 1rem;
-  text-align: center;
+  text-align: left; // Измените на left для выравнивания текста
 
   &:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -46,19 +48,18 @@ const Image = styled.img`
   max-width: 100%;
   max-height: 100%;
 `;
-
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [open, setOpen] = useState(false);
-
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const { addToCart } = useCart();
+
   return (
     <>
       <CardMedia
         sx={{
-          height: "200px", // Фиксированная высота для изображения
+          height: "225px", // Фиксированная высота для изображения
           objectFit: "cover", // Обрезка изображения по размеру
         }}
       >
@@ -68,24 +69,38 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           alt={product.title}
         />
       </CardMedia>
-      <Typography variant="h6">{product.title}</Typography>
-      <Typography variant="h6" style={{ color: "#DAA520" }}>
-        {product.price}₽
-      </Typography>
+
       <Box
         sx={{
           display: "flex",
-          flexDirection: "row",
-          borderRadius: 1,
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
-        <Item>
-          <StarIcon style={{ color: "#DAA520" }} />
-        </Item>
-        <Item>
-          <Typography>{product.rate}</Typography>
-        </Item>
+        <div>
+          <Typography variant="h6">{product.title}</Typography>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Item>
+              <StarIcon style={{ color: "#DAA520" }} />
+            </Item>
+            <Item>
+              <Typography>{product.rate}</Typography>
+            </Item>
+          </Box>
+        </div>
+
+        <div style={{ textAlign: "right" }}>
+          <Typography variant="h6" style={{ color: "#DAA520" }}>
+            {product.price}₽
+          </Typography>
+          <CardActions>
+            <Button variant="text" onClick={() => addToCart(product)}>
+              Купить
+            </Button>
+          </CardActions>
+        </div>
       </Box>
+
       <div>
         <IconButton onClick={handleOpen}>
           <InfoIcon />
@@ -93,11 +108,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
         <ProductModal open={open} handleClose={handleClose} product={product} />
       </div>
-      <CardActions>
-        <Button variant="text" onClick={() => addToCart(product)}>
-          Купить
-        </Button>
-      </CardActions>
     </>
   );
 };

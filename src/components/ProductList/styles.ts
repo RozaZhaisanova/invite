@@ -5,7 +5,7 @@ export const ProductGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
-    minmax(250px, 1fr)
+    minmax(300px, 1fr)
   ); // Автоматическое заполнение с минимальной шириной
   gap: 16px;
 `;
