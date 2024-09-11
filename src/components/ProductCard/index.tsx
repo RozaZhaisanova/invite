@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { ImageProps, ProductCardProps } from "./interfaces";
 import { useCart } from "../../contexts/CartContext";
@@ -6,7 +6,9 @@ import { CardMedia, CardActions, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import StarIcon from "@mui/icons-material/Star";
 import Box, { BoxProps } from "@mui/material/Box";
-
+import { IconButton } from "@mui/material";
+import InfoIcon from "@mui/icons-material/Info";
+import ProductModal from "../ProductModal";
 function Item(props: BoxProps) {
   const { sx, ...other } = props;
   return (
@@ -46,6 +48,11 @@ const Image = styled.img`
 `;
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const { addToCart } = useCart();
   return (
     <>
@@ -69,9 +76,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         sx={{
           display: "flex",
           flexDirection: "row",
-          p: 1,
-          m: 1,
-          bgcolor: "background.paper",
           borderRadius: 1,
         }}
       >
@@ -82,7 +86,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <Typography>{product.rate}</Typography>
         </Item>
       </Box>
+      <div>
+        <IconButton onClick={handleOpen}>
+          <InfoIcon />
+        </IconButton>
 
+        <ProductModal open={open} handleClose={handleClose} product={product} />
+      </div>
       <CardActions>
         <Button variant="text" onClick={() => addToCart(product)}>
           Купить
