@@ -47,6 +47,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <>
+      <div style={{ textAlign: "right" }}>
+        <IconButton onClick={handleOpen}>
+          <InfoIcon />
+        </IconButton>
+
+        <ProductModal open={open} handleClose={handleClose} product={product} />
+      </div>
       <Box
         sx={{
           display: "flex",
@@ -66,11 +73,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: "flex-start",
+          marginTop: "1rem",
         }}
       >
-        <div>
-          <Typography variant="h6">{product.title}</Typography>
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Typography variant="h6" style={{ marginBottom: "0.5rem" }}>
+            {product.title}
+          </Typography>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Item>
               <StarIcon style={{ color: "#DAA520" }} />
@@ -79,27 +89,32 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               <Typography>{product.rate}</Typography>
             </Item>
           </Box>
-        </div>
+        </Box>
 
-        <div style={{ textAlign: "right" }}>
-          <Typography variant="h6" style={{ color: "#DAA520" }}>
+        <Box
+          sx={{
+            textAlign: "right",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-end",
+          }}
+        >
+          <Typography
+            variant="h6"
+            style={{
+              color: "#DAA520",
+              marginBottom: "0.5rem",
+              marginRight: "0.4rem",
+            }}
+          >
             {product.price}₽
           </Typography>
-          <CardActions>
-            <Button variant="text" onClick={() => addToCart(product)}>
-              Купить
-            </Button>
-          </CardActions>
-        </div>
+
+          <Button variant="text" onClick={() => addToCart(product)}>
+            Купить
+          </Button>
+        </Box>
       </Box>
-
-      <div>
-        <IconButton onClick={handleOpen}>
-          <InfoIcon />
-        </IconButton>
-
-        <ProductModal open={open} handleClose={handleClose} product={product} />
-      </div>
     </>
   );
 };
