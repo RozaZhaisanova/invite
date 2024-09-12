@@ -17,7 +17,6 @@ function Item(props: BoxProps) {
       sx={[
         (theme) => ({
           color: "grey.800",
-          borderRadius: 1,
           fontSize: "0.875rem",
           fontWeight: "700",
           ...theme.applyStyles("dark", {

@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import Cart from "../../components/Cart";
-import React from "react";
+import React, { useState } from "react";
 import { useCart } from "../../contexts/CartContext";
+import { Button } from "@mui/material";
+import PaymentModal from "../../components/PaymentModal";
 
 const CartPage: React.FC = () => {
   const navigate = useNavigate();
@@ -12,7 +14,10 @@ const CartPage: React.FC = () => {
     decreaseQuantity,
     removeFromCart,
   } = useCart();
+  const [open, setOpen] = useState(false);
 
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <div className="cart-page">
       <h1>Корзина</h1>
@@ -40,6 +45,10 @@ const CartPage: React.FC = () => {
         </div>
       )}
       <button onClick={() => navigate("/")}>Back to Catalog</button>
+
+      <Button onClick={handleOpen}>Переход к оформлению</Button>
+
+      <PaymentModal open={open} handleClose={handleClose} />
     </div>
   );
 };
