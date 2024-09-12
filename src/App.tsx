@@ -8,6 +8,7 @@ import { Header } from "./components/Header";
 import Footer from "./components/Footer";
 import styled from "styled-components";
 import { CartProvider } from "./contexts/CartContext";
+import { NotFound } from "./pages/NotFound";
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -27,6 +28,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Catalog />} />
               <Route path="/cart" element={<CartPage />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </MainContent>
           <Footer />

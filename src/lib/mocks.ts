@@ -5,6 +5,7 @@ export const headphones = [
     price: 2927,
     rate: 4.7,
     id: 1,
+    type: "wireless",
   },
   {
     img: "./assets/2.jpg",
@@ -12,6 +13,7 @@ export const headphones = [
     price: 3499,
     rate: 4.8,
     id: 2,
+    type: "wired",
   },
   {
     img: "./assets/3.jpg",
@@ -19,6 +21,7 @@ export const headphones = [
     price: 2999,
     rate: 4.6,
     id: 3,
+    type: "wired",
   },
   {
     img: "./assets/4.jpg",
@@ -26,6 +29,7 @@ export const headphones = [
     price: 2879,
     rate: 4.3,
     id: 4,
+    type: "wireless",
   },
   {
     img: "./assets/5.jpg",
@@ -33,6 +37,7 @@ export const headphones = [
     price: 2920,
     rate: 4.4,
     id: 5,
+    type: "wireless",
   },
   {
     img: "./assets/6.png",
@@ -40,6 +45,7 @@ export const headphones = [
     price: 3489,
     rate: 4.8,
     id: 6,
+    type: "wired",
   },
   {
     img: "./assets/7.jpg",
@@ -47,6 +53,7 @@ export const headphones = [
     price: 3999,
     rate: 4.9,
     id: 7,
+    type: "wireless",
   },
   {
     img: "./assets/8.jpg",
@@ -54,6 +61,7 @@ export const headphones = [
     price: 3879,
     rate: 4.2,
     id: 8,
+    type: "wireless",
   },
   {
     img: "./assets/9.jpg",
@@ -61,5 +69,6 @@ export const headphones = [
     price: 3920,
     rate: 4.4,
     id: 9,
+    type: "wireless",
   },
 ];

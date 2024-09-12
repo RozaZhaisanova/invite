@@ -86,7 +86,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               <StarIcon style={{ color: "#DAA520" }} />
             </Item>
             <Item>
-              <Typography>{product.rate}</Typography>
+              <Typography>&nbsp;{product.rate}</Typography>
             </Item>
           </Box>
         </Box>
@@ -103,7 +103,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             variant="h6"
             style={{
               color: "#DAA520",
-              marginBottom: "0.5rem",
+              marginBottom: "0.3rem",
               marginRight: "0.4rem",
             }}
           >
