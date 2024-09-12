@@ -15,30 +15,67 @@ export const ProductList = () => {
   useEffect(() => {
     const fetchHeadphones = async () => {
       setIsLoading(true);
-      const fetchedUsers = await getHeadphones();
-      setHeadphones(fetchedUsers);
+      const fetchedHeadphones = await getHeadphones();
+      setHeadphones(fetchedHeadphones);
       setIsLoading(false);
     };
     fetchHeadphones();
   }, []);
+  const wired = headphones.filter((product) => product.type === "wired");
+  const wireless = headphones.filter((product) => product.type === "wireless");
   return (
     <Container component="main" maxWidth="lg">
-      <ProductGrid>
-        {headphones.map((product) => (
-          <Card
-            key={product.id}
-            sx={{
-              height: "400px",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <CardContent>
-              <ProductCard product={product} />
-            </CardContent>
-          </Card>
-        ))}
-      </ProductGrid>
+      <>
+        {wired.length > 0 && (
+          <>
+            <h2 className="titlePage"> Наушники</h2>
+            <div className="products__list wired__list">
+              <ProductGrid>
+                {wired.map((product) => (
+                  <Card
+                    key={product.id}
+                    sx={{
+                      height: "400px",
+                      display: "flex",
+                      flexDirection: "column",
+                      borderRadius: 5,
+                    }}
+                  >
+                    <CardContent>
+                      <ProductCard product={product} />
+                    </CardContent>
+                  </Card>
+                ))}
+              </ProductGrid>
+            </div>
+          </>
+        )}
+        {wireless.length > 0 && (
+          <>
+            <h2 className="titlePage">Беспроводные наушники</h2>
+            <div className="products__list wireless__list">
+              <ProductGrid>
+                {" "}
+                {wireless.map((product) => (
+                  <Card
+                    key={product.id}
+                    sx={{
+                      height: "400px",
+                      display: "flex",
+                      flexDirection: "column",
+                      borderRadius: 4,
+                    }}
+                  >
+                    <CardContent>
+                      <ProductCard product={product} />
+                    </CardContent>
+                  </Card>
+                ))}{" "}
+              </ProductGrid>
+            </div>
+          </>
+        )}
+      </>
     </Container>
   );
 };
