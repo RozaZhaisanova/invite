@@ -3,6 +3,7 @@ export const headphones = [
     img: "./assets/1.jpg",
     title: "Apple BYZ S852I",
     price: 2927,
+    oldPrice: 3580,
     rate: 4.7,
     id: 1,
     type: "wireless",
@@ -17,7 +18,8 @@ export const headphones = [
   },
   {
     img: "./assets/3.jpg",
-    title: "Bose QuietComfort 35 II",
+    title:
+      "Bose QuietComfort 35 II серый 2.0, охватывающие, Bluetooth, проводной, кабель - 1.2 м",
     price: 2999,
     rate: 4.6,
     id: 3,
@@ -35,6 +37,7 @@ export const headphones = [
     img: "./assets/5.jpg",
     title: "JBL Tune 510WS",
     price: 2920,
+    oldPrice: 4620,
     rate: 4.4,
     id: 5,
     type: "wireless",

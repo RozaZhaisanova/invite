@@ -9,6 +9,7 @@ import Box, { BoxProps } from "@mui/material/Box";
 import { IconButton } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import ProductModal from "../ProductModal";
+import { TypographyOldPrice } from "./styles";
 
 function Item(props: BoxProps) {
   const { sx, ...other } = props;
@@ -48,7 +49,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <>
       <div style={{ textAlign: "right" }}>
-        <IconButton onClick={handleOpen}>
+        <IconButton onClick={handleOpen} size="small">
           <InfoIcon />
         </IconButton>
 
@@ -79,7 +80,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       >
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <Typography variant="h6" style={{ marginBottom: "0.5rem" }}>
-            {product.title}
+            {product.title.length > 25
+              ? `${product.title.slice(0, 25)}...`
+              : product.title}
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Item>
@@ -99,17 +102,29 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             alignItems: "flex-end",
           }}
         >
-          <Typography
-            variant="h6"
-            style={{
-              color: "#DAA520",
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+
               marginBottom: "0.3rem",
-              marginRight: "0.4rem",
             }}
           >
-            {product.price}₽
-          </Typography>
-
+            <Typography
+              variant="h6"
+              style={{
+                color: "#DAA520",
+                marginRight: "0.4rem",
+              }}
+            >
+              {product.price}₽
+            </Typography>
+            <TypographyOldPrice className={` single-line`}>
+              {product.oldPrice ? product.oldPrice + " ₽" : ""}
+            </TypographyOldPrice>
+          </Box>
           <Button variant="text" onClick={() => addToCart(product)}>
             Купить
           </Button>

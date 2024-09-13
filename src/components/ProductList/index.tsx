@@ -35,7 +35,7 @@ export const ProductList = () => {
                   <Card
                     key={product.id}
                     sx={{
-                      height: "400px",
+                      height: "380px",
                       display: "flex",
                       flexDirection: "column",
                       borderRadius: 5,
@@ -55,12 +55,11 @@ export const ProductList = () => {
             <h2 className="titlePage">Беспроводные наушники</h2>
             <div className="products__list wireless__list">
               <ProductGrid>
-                {" "}
                 {wireless.map((product) => (
                   <Card
                     key={product.id}
                     sx={{
-                      height: "400px",
+                      height: "380px",
                       display: "flex",
                       flexDirection: "column",
                       borderRadius: 4,
@@ -70,7 +69,7 @@ export const ProductList = () => {
                       <ProductCard product={product} />
                     </CardContent>
                   </Card>
-                ))}{" "}
+                ))}
               </ProductGrid>
             </div>
           </>

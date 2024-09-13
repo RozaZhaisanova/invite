@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1.5rem;
 `;
 
 export const Logo = styled(Link)`
