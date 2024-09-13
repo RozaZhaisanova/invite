@@ -5,6 +5,9 @@ export const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 1.5rem;
+  width: 1109.89px;
+  height: 60px;
+  margin-left: 340px;
 `;
 
 export const Logo = styled(Link)`

@@ -4,6 +4,7 @@ import { HeaderStyled, Logo } from "./styles";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Badge } from "@mui/material";
 import { useCart } from "../../contexts/CartContext";
+import Vector from "./assets/Vector.jpg";
 export const Header = () => {
   const { cartItems } = useCart();
 
@@ -12,8 +13,12 @@ export const Header = () => {
       <Logo to="/">Audio Store</Logo>
       <Link to="/cart">
         <Badge badgeContent={Object.keys(cartItems).length} color="secondary">
-          <ShoppingCartIcon color="primary" fontSize="medium" />
+          <img src="./assets/Vector.jpg" alt="Корзина" />
         </Badge>
+      </Link>
+      <Link to="/cart">
+        <span>{Object.keys(cartItems).length}</span>
+        <img src="./assets/Vector.jpg" alt="Корзина" />
       </Link>
     </HeaderStyled>
   );
