@@ -72,26 +72,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
       <Box
         sx={{
-          display: "flex",
           justifyContent: "space-between",
           alignItems: "flex-start",
-          marginTop: "1rem",
+          display: "flex",
+          flexDirection: "row",
         }}
       >
         <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <Typography variant="h6" style={{ marginBottom: "0.5rem" }}>
+          <Typography variant="h6">
             {product.title.length > 25
               ? `${product.title.slice(0, 25)}...`
               : product.title}
           </Typography>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Item>
-              <StarIcon style={{ color: "#DAA520" }} />
-            </Item>
-            <Item>
-              <Typography>&nbsp;{product.rate}</Typography>
-            </Item>
-          </Box>
         </Box>
 
         <Box
@@ -108,8 +100,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "column",
-
-              marginBottom: "0.3rem",
             }}
           >
             <Typography
@@ -121,14 +111,36 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             >
               {product.price}₽
             </Typography>
-            <TypographyOldPrice className={` single-line`}>
+            <TypographyOldPrice
+              variant="subtitle2"
+              className={` single-line`}
+              style={{ marginTop: "-0.3rem", color: "#DAA520" }}
+            >
               {product.oldPrice ? product.oldPrice + " ₽" : ""}
             </TypographyOldPrice>
           </Box>
-          <Button variant="text" onClick={() => addToCart(product)}>
-            Купить
-          </Button>
         </Box>
+      </Box>
+      <Box
+        sx={{
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+          display: "flex",
+          flexDirection: "row",
+          marginTop: "0.4rem",
+        }}
+      >
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Item>
+            <StarIcon style={{ color: "#DAA520" }} />
+          </Item>
+          <Item>
+            <Typography>&nbsp;{product.rate}</Typography>
+          </Item>
+        </Box>
+        <Button variant="text" onClick={() => addToCart(product)}>
+          Купить
+        </Button>
       </Box>
     </>
   );

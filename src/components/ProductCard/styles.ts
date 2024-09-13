@@ -20,7 +20,7 @@ export const Logo = styled(Link)`
 `;
 export const TypographyOldPrice = styled(Typography)`
   text-decoration: line-through;
-  color: #ffce7f;
   max-width: 70px;
+  max-height: 10px;
   text-align: center;
 `;

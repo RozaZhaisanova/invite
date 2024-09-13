@@ -35,7 +35,7 @@ export const ProductList = () => {
                   <Card
                     key={product.id}
                     sx={{
-                      height: "380px",
+                      height: "370px",
                       display: "flex",
                       flexDirection: "column",
                       borderRadius: 5,
@@ -59,7 +59,7 @@ export const ProductList = () => {
                   <Card
                     key={product.id}
                     sx={{
-                      height: "380px",
+                      height: "370px",
                       display: "flex",
                       flexDirection: "column",
                       borderRadius: 4,
