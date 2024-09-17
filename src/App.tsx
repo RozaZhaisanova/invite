@@ -7,8 +7,10 @@ import { LanguageProvider } from "./contexts";
 import { Header } from "./components/Header";
 import Footer from "./components/Footer";
 import styled from "styled-components";
-import { CartProvider } from "./contexts/CartContext";
 import { NotFound } from "./pages/NotFound";
+import { store } from "./store";
+import { Provider } from "react-redux";
+
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,8 +21,8 @@ const MainContent = styled.main`
 `;
 const App = () => (
   <AppContainer>
-    <LanguageProvider>
-      <CartProvider>
+    <Provider store={store}>
+      <LanguageProvider>
         <Router>
           <MainContent>
             <GlobalStyles />
@@ -33,8 +35,8 @@ const App = () => (
           </MainContent>
           <Footer />
         </Router>
-      </CartProvider>
-    </LanguageProvider>
+      </LanguageProvider>
+    </Provider>
   </AppContainer>
 );
 

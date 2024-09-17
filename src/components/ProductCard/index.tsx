@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ImageProps, ProductCardProps } from "./interfaces";
-import { useCart } from "../../contexts/CartContext";
+import { useDispatch } from "react-redux";
 import { CardMedia, CardActions, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import StarIcon from "@mui/icons-material/Star";
@@ -10,7 +10,7 @@ import { IconButton } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import ProductModal from "../ProductModal";
 import { TypographyOldPrice } from "./styles";
-
+import { addItem } from "../../store/slices/cartSlice";
 function Item(props: BoxProps) {
   const { sx, ...other } = props;
   return (
@@ -43,8 +43,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-  const { addToCart } = useCart();
+  const dispatch = useDispatch();
+  const handleAddToCart = () => {
+    dispatch(addItem({ title: "", img: "", price: 0, quantity: 1 }));
+  };
 
   return (
     <>
@@ -138,7 +140,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <Typography>&nbsp;{product.rate}</Typography>
           </Item>
         </Box>
-        <Button variant="text" onClick={() => addToCart(product)}>
+        <Button variant="text" onClick={handleAddToCart}>
           Купить
         </Button>
       </Box>

@@ -15,8 +15,8 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action: PayloadAction<CartProduct>) => {
-      const { name } = action.payload;
-      const existingItem = state.items.find((item) => item.name === name);
+      const { title } = action.payload;
+      const existingItem = state.items.find((item) => item.title === title);
       if (existingItem) {
         // Увеличиваем счетчик товара
         existingItem.quantity++;
@@ -27,12 +27,12 @@ const cartSlice = createSlice({
     },
 
     removeItem: (state, action: PayloadAction<string>) => {
-      state.items = state.items.filter((item) => item.name !== action.payload);
+      state.items = state.items.filter((item) => item.title !== action.payload);
     },
 
     increaseQuantity: (state, action: PayloadAction<string>) => {
       const itemIndex = state.items.findIndex((item) => {
-        return item.name === action.payload;
+        return item.title === action.payload;
       });
 
       if (itemIndex !== -1) {
@@ -42,7 +42,7 @@ const cartSlice = createSlice({
 
     decreaseQuantity: (state, action: PayloadAction<string>) => {
       const itemIndex = state.items.findIndex(
-        (item) => item.name === action.payload
+        (item) => item.title === action.payload
       );
       if (itemIndex !== -1) {
         state.items[itemIndex].quantity--;

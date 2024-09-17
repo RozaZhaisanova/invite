@@ -22,7 +22,7 @@ const CartPage: React.FC = () => {
         <div>
           <ul>
             {cartItems.map((item) => (
-              <div key={item.name}>
+              <div key={item.title}>
                 <h3>{item.price}</h3>
                 <p>Quantity: {item.quantity}</p>
                 {/* Добавьте кнопки для увеличения/уменьшения количества и удаления */}

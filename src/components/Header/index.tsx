@@ -5,8 +5,10 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Badge } from "@mui/material";
 import { useCart } from "../../contexts/CartContext";
 import Vector from "./assets/Vector.jpg";
+import { useSelector } from "react-redux";
+import { selectCartItems } from "../../store/slices/cartSlice";
 export const Header = () => {
-  const { cartItems } = useCart();
+  const cartItems = useSelector(selectCartItems);
 
   return (
     <HeaderStyled>
