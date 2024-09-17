@@ -1,19 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import Cart from "../../components/Cart";
-import React, { useState } from "react";
-import { useCart } from "../../contexts/CartContext";
 import { Button } from "@mui/material";
 import PaymentModal from "../../components/PaymentModal";
+import React, { useState } from "react";
+import { selectCartItems } from "../../store/slices/cartSlice";
+import { Product } from "../../lib/types";
+import { useSelector } from "react-redux";
 
 const CartPage: React.FC = () => {
+  const cartItems = useSelector(selectCartItems);
   const navigate = useNavigate();
-  const {
-    cartItems,
-    totalPrice,
-    increaseQuantity,
-    decreaseQuantity,
-    removeFromCart,
-  } = useCart();
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
@@ -26,22 +21,14 @@ const CartPage: React.FC = () => {
       ) : (
         <div>
           <ul>
-            {Object.values(cartItems).map((item) => (
-              <li key={item.product.id}>
-                {item.product.title} - {item.product.price}₽ x {item.quantity}
-                <button onClick={() => increaseQuantity(item.product.id)}>
-                  +
-                </button>
-                <button onClick={() => decreaseQuantity(item.product.id)}>
-                  -
-                </button>
-                <button onClick={() => removeFromCart(item.product.id)}>
-                  Удалить
-                </button>
-              </li>
+            {cartItems.map((item) => (
+              <div key={item.name}>
+                <h3>{item.price}</h3>
+                <p>Quantity: {item.quantity}</p>
+                {/* Добавьте кнопки для увеличения/уменьшения количества и удаления */}
+              </div>
             ))}
           </ul>
-          <h2>Итого: {totalPrice}₽</h2>
         </div>
       )}
       <button onClick={() => navigate("/")}>Back to Catalog</button>

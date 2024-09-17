@@ -7,3 +7,14 @@ export interface Product {
   rate: number;
   id: number;
 }
+export interface CartProduct {
+  name: string;
+  image: string;
+  price: number;
+  quantity: number;
+}
+
+export interface PopupProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
