@@ -11,6 +11,10 @@ function CartPage() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
   return (
     <div className="body">
       <main className="main">
@@ -27,6 +31,11 @@ function CartPage() {
               quantity={item.quantity}
             />
           ))
+        )}
+        {totalPrice !== 0 ? (
+          <span>₽ {totalPrice}</span>
+        ) : (
+          <span>emptyCart</span>
         )}
         <button onClick={() => navigate("/")}>Back to Catalog</button>
 
