@@ -46,6 +46,7 @@ const Footer = () => {
         <option value="ru">Русский</option>
         <option value="es">Español</option>
       </LanguageSelector>
+      <h1>{t("termsOfService")}</h1>
       <SocialLink
         href="https://t.me/fonelor"
         target="_blank"

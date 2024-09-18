@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import i18n from "./i18n"; // импортируйте вашу конфигурацию i18n
+import i18n from "./i18n";
 
 interface LanguageContextType {
   language: string;
@@ -13,10 +13,10 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [language, setLanguage] = useState<string>("en"); // Установите язык по умолчанию
+  const [language, setLanguage] = useState<string>("ru");
 
   useEffect(() => {
-    i18n.changeLanguage(language); // Изменяем язык в i18n
+    i18n.changeLanguage(language);
   }, [language]);
 
   return (

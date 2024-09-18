@@ -7,21 +7,19 @@ i18n
     resources: {
       en: {
         translation: {
-          welcome: "Welcome",
-          // другие ключи перевода
+          termsOfService: "Terms of service",
         },
       },
       ru: {
         translation: {
-          welcome: "Добро пожаловать",
-          // другие ключи перевода
+          termsOfService: "Условия сервиса",
         },
       },
     },
-    lng: "en", // язык по умолчанию
+    lng: "ru", // язык по умолчанию
     fallbackLng: "en", // язык по умолчанию, если перевод не найден
     interpolation: {
-      escapeValue: false, // React уже защищает от XSS
+      escapeValue: false,
     },
   });
 
