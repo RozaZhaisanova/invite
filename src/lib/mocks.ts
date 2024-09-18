@@ -1,6 +1,6 @@
 export const headphones = [
   {
-    img: "./assets/1.jpg",
+    img: "./assets/1.png",
     title: "Apple BYZ S852I",
     price: 2927,
     oldPrice: 3580,
@@ -9,7 +9,7 @@ export const headphones = [
     type: "wireless",
   },
   {
-    img: "./assets/2.jpg",
+    img: "./assets/2.png",
     title: "Sony WH-1000XM4",
     price: 3499,
     rate: 4.8,
@@ -17,7 +17,7 @@ export const headphones = [
     type: "wired",
   },
   {
-    img: "./assets/3.jpg",
+    img: "./assets/3.png",
     title:
       "Bose QuietComfort 35 II серый 2.0, охватывающие, Bluetooth, проводной, кабель - 1.2 м",
     price: 2999,
@@ -26,7 +26,7 @@ export const headphones = [
     type: "wired",
   },
   {
-    img: "./assets/4.jpg",
+    img: "./assets/7.png",
     title: "Huawei pura 70",
     price: 2879,
     rate: 4.3,
@@ -34,7 +34,7 @@ export const headphones = [
     type: "wireless",
   },
   {
-    img: "./assets/5.jpg",
+    img: "./assets/5.png",
     title: "JBL Tune 510WS",
     price: 2920,
     oldPrice: 4620,
@@ -43,7 +43,7 @@ export const headphones = [
     type: "wireless",
   },
   {
-    img: "./assets/6.png",
+    img: "./assets/8.png",
     title: "JBL T110",
     price: 3489,
     rate: 4.8,
@@ -51,7 +51,7 @@ export const headphones = [
     type: "wired",
   },
   {
-    img: "./assets/7.jpg",
+    img: "./assets/7.png",
     title: "Tune 225 tws",
     price: 3999,
     rate: 4.9,
@@ -59,7 +59,7 @@ export const headphones = [
     type: "wireless",
   },
   {
-    img: "./assets/8.jpg",
+    img: "./assets/7.png",
     title: "Tune 120 TWS",
     price: 3879,
     rate: 4.2,
@@ -67,7 +67,7 @@ export const headphones = [
     type: "wireless",
   },
   {
-    img: "./assets/9.jpg",
+    img: "./assets/8.png",
     title: "AirPods pro",
     price: 3920,
     rate: 4.4,

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
-import { ProductGrid } from "./styles";
+import { CardStyled, ProductGrid } from "./styles";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -32,19 +32,11 @@ export const ProductList = () => {
             <div className="products__list wired__list">
               <ProductGrid>
                 {wired.map((product) => (
-                  <Card
-                    key={product.id}
-                    sx={{
-                      height: "370px",
-                      display: "flex",
-                      flexDirection: "column",
-                      borderRadius: 7,
-                    }}
-                  >
+                  <CardStyled key={product.id}>
                     <CardContent>
                       <ProductCard product={product} />
                     </CardContent>
-                  </Card>
+                  </CardStyled>
                 ))}
               </ProductGrid>
             </div>

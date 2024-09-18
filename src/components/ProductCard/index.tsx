@@ -11,6 +11,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import ProductModal from "../ProductModal";
 import { TypographyOldPrice } from "./styles";
 import { addItem } from "../../store/slices/cartSlice";
+import { DivStyled } from "./styles";
 function Item(props: BoxProps) {
   const { sx, ...other } = props;
   return (
@@ -72,79 +73,80 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           alt={product.title}
         />
       </Box>
-
-      <Box
-        sx={{
-          justifyContent: "space-between",
-          alignItems: "flex-start",
-          display: "flex",
-          flexDirection: "row",
-        }}
-      >
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <Typography variant="h6">
-            {product.title.length > 25
-              ? `${product.title.slice(0, 25)}...`
-              : product.title}
-          </Typography>
-        </Box>
-
+      <DivStyled>
         <Box
           sx={{
-            textAlign: "right",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
             display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-end",
+            flexDirection: "row",
           }}
         >
+          <Box sx={{ display: "flex", flexDirection: "column" }}>
+            <Typography variant="h6">
+              {product.title.length > 25
+                ? `${product.title.slice(0, 25)}...`
+                : product.title}
+            </Typography>
+          </Box>
+
           <Box
             sx={{
+              textAlign: "right",
               display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
               flexDirection: "column",
+              alignItems: "flex-end",
             }}
           >
-            <Typography
-              variant="h6"
-              style={{
-                color: "#DAA520",
-                marginRight: "0.4rem",
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
               }}
             >
-              {product.price}₽
-            </Typography>
-            <TypographyOldPrice
-              variant="subtitle2"
-              className={` single-line`}
-              style={{ marginTop: "-0.3rem", color: "#DAA520" }}
-            >
-              {product.oldPrice ? product.oldPrice + " ₽" : ""}
-            </TypographyOldPrice>
+              <Typography
+                variant="h6"
+                style={{
+                  color: "#DAA520",
+                  marginRight: "0.4rem",
+                }}
+              >
+                {product.price}₽
+              </Typography>
+              <TypographyOldPrice
+                variant="subtitle2"
+                className={` single-line`}
+                style={{ marginTop: "-0.3rem", color: "#DAA520" }}
+              >
+                {product.oldPrice ? product.oldPrice + " ₽" : ""}
+              </TypographyOldPrice>
+            </Box>
           </Box>
         </Box>
-      </Box>
-      <Box
-        sx={{
-          justifyContent: "space-between",
-          alignItems: "flex-start",
-          display: "flex",
-          flexDirection: "row",
-          marginTop: "0.4rem",
-        }}
-      >
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Item>
-            <StarIcon style={{ color: "#DAA520" }} />
-          </Item>
-          <Item>
-            <Typography>&nbsp;{product.rate}</Typography>
-          </Item>
+        <Box
+          sx={{
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            display: "flex",
+            flexDirection: "row",
+            marginTop: "0.4rem",
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Item>
+              <StarIcon style={{ color: "#DAA520" }} />
+            </Item>
+            <Item>
+              <Typography>&nbsp;{product.rate}</Typography>
+            </Item>
+          </Box>
+          <Button variant="text" onClick={handleAddToCart}>
+            Купить
+          </Button>
         </Box>
-        <Button variant="text" onClick={handleAddToCart}>
-          Купить
-        </Button>
-      </Box>
+      </DivStyled>
     </>
   );
 };

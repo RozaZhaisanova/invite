@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Card, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 export const ProductGrid = styled.div`
@@ -30,4 +30,15 @@ export const ContainerStyled = styled(Container)`
   &:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+`;
+export const CardStyled = styled.div`
+  box-shadow: 0px 0px 20px 0px #0000001a;
+  background: #ffffff;
+  width: 350px;
+  height: 406.81px;
+  top: 1053.19px;
+  left: 562px;
+  gap: 0px;
+  border-radius: 30px;
+  opacity: 0px;
 `;
