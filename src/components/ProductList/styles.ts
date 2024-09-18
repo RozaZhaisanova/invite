@@ -25,11 +25,15 @@ export const Logo = styled(Link)`
     color: #007bff;
   }
 `;
-export const ContainerStyled = styled(Container)`
-  border: 1px solid #ddd;
-  &:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+export const ContainerStyled = styled.div`
+  width: 1110px;
+  height: 888.65px;
+  top: 88px;
+  left: 182px;
+  gap: 0px;
+  opacity: 0px;
+
+  margin: 0 auto;
 `;
 export const CardStyled = styled.div`
   box-shadow: 0px 0px 20px 0px #0000001a;

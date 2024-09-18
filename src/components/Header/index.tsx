@@ -15,7 +15,7 @@ export const Header = () => {
       <Logo to="/">QPICK</Logo>
       <Link to="/cart">
         <Badge badgeContent={Object.keys(cartItems).length} color="secondary">
-          <img src="./assets/Vector.jpg" alt="Корзина" />
+          <img src="./assets/Vector.svg" alt="Корзина" />
         </Badge>
       </Link>
     </HeaderStyled>

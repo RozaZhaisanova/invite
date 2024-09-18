@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
-import { CardStyled, ProductGrid } from "./styles";
+import { CardStyled, ContainerStyled, ProductGrid } from "./styles";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -23,7 +23,7 @@ export const ProductList = () => {
   const wired = headphones.filter((product) => product.type === "wired");
   const wireless = headphones.filter((product) => product.type === "wireless");
   return (
-    <Container component="main" maxWidth="lg">
+    <ContainerStyled>
       <>
         {wired.length > 0 && (
           <>
@@ -58,6 +58,6 @@ export const ProductList = () => {
           </>
         )}
       </>
-    </Container>
+    </ContainerStyled>
   );
 };

@@ -19,6 +19,7 @@ const AppContainer = styled.div`
 `;
 const MainContent = styled.main`
   flex: 1;
+  padding-bottom: 20px;
 `;
 const App = () => (
   <AppContainer>

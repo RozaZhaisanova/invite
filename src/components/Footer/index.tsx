@@ -3,12 +3,18 @@ import styled from "styled-components";
 import { useLanguage } from "../../contexts";
 import { useTranslation } from "react-i18next";
 const FooterContainer = styled.footer`
+  box-shadow: 0px 0px 20px 0px #0000001a;
+  width: 1110px;
+  height: 149px;
+  border-radius: 30px 30px 0px 0px;
+  background: #ffffff;
+
+  margin: 0 auto;
+  overflow-x: hidden;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: #2a4580;
-  border-top: 1px solid #ddd;
 `;
 const LanguageSelector = styled.select`
   padding: 0.5rem;
