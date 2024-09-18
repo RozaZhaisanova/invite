@@ -2,20 +2,23 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5rem;
   width: 1109.89px;
-  height: 60px;
-  margin-left: 340px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 60px;
+  overflow-x: hidden;
 `;
 
 export const Logo = styled(Link)`
-  font-size: 1.5rem;
   text-decoration: none;
-  color: #333;
+  color: #101010;
 
-  &:hover {
-    color: #007bff;
-  }
+  font-family: Montserrat;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30.48px;
+  text-align: left;
 `;

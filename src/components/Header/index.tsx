@@ -12,15 +12,11 @@ export const Header = () => {
 
   return (
     <HeaderStyled>
-      <Logo to="/">Audio Store</Logo>
+      <Logo to="/">QPICK</Logo>
       <Link to="/cart">
         <Badge badgeContent={Object.keys(cartItems).length} color="secondary">
           <img src="./assets/Vector.jpg" alt="Корзина" />
         </Badge>
-      </Link>
-      <Link to="/cart">
-        <span>{Object.keys(cartItems).length}</span>
-        <img src="./assets/Vector.jpg" alt="Корзина" />
       </Link>
     </HeaderStyled>
   );

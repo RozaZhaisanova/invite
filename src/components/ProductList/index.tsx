@@ -3,7 +3,6 @@ import ProductCard from "../ProductCard";
 import { CardStyled, ProductGrid } from "./styles";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
 import { getHeadphones } from "../../lib/api";
 import { Product } from "../../lib/types";
@@ -48,19 +47,11 @@ export const ProductList = () => {
             <div className="products__list wireless__list">
               <ProductGrid>
                 {wireless.map((product) => (
-                  <Card
-                    key={product.id}
-                    sx={{
-                      height: "370px",
-                      display: "flex",
-                      flexDirection: "column",
-                      borderRadius: 4,
-                    }}
-                  >
+                  <CardStyled key={product.id}>
                     <CardContent>
                       <ProductCard product={product} />
                     </CardContent>
-                  </Card>
+                  </CardStyled>
                 ))}
               </ProductGrid>
             </div>
