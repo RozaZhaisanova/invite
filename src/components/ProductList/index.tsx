@@ -38,7 +38,7 @@ export const ProductList = () => {
                       height: "370px",
                       display: "flex",
                       flexDirection: "column",
-                      borderRadius: 5,
+                      borderRadius: 7,
                     }}
                   >
                     <CardContent>

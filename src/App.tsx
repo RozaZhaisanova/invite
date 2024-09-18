@@ -8,9 +8,10 @@ import { Header } from "./components/Header";
 import Footer from "./components/Footer";
 import styled from "styled-components";
 import { NotFound } from "./pages/NotFound";
-import { store } from "./store";
+import { store, persistor } from "./store";
 import { Provider } from "react-redux";
-
+import { PersistGate } from "redux-persist/integration/react";
+import { Audio } from "react-loader-spinner";
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,20 +23,22 @@ const MainContent = styled.main`
 const App = () => (
   <AppContainer>
     <Provider store={store}>
-      <LanguageProvider>
-        <Router>
-          <MainContent>
-            <GlobalStyles />
-            <Header />
-            <Routes>
-              <Route path="/" element={<Catalog />} />
-              <Route path="/cart" element={<CartPage />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </MainContent>
-          <Footer />
-        </Router>
-      </LanguageProvider>
+      <PersistGate loading={<Audio />} persistor={persistor}>
+        <LanguageProvider>
+          <Router>
+            <MainContent>
+              <GlobalStyles />
+              <Header />
+              <Routes>
+                <Route path="/" element={<Catalog />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </MainContent>
+            <Footer />
+          </Router>
+        </LanguageProvider>
+      </PersistGate>
     </Provider>
   </AppContainer>
 );
