@@ -7,7 +7,7 @@ export const ProductGrid = styled.div`
     auto-fill,
     minmax(300px, 1fr)
   ); // Автоматическое заполнение с минимальной шириной
-  gap: 16px;
+  gap: 30px;
 `;
 export const HeaderStyled = styled.header`
   display: flex;
@@ -25,14 +25,11 @@ export const Logo = styled(Link)`
     color: #007bff;
   }
 `;
-export const ContainerStyled = styled.div`
-  width: 1110px;
-  height: 888.65px;
+export const ContainerStyled = styled.main`
+  max-width: 1110px;
+  min-height: calc(100vh - 149px - 88px);
   top: 88px;
   left: 182px;
-  gap: 0px;
-  opacity: 0px;
-
   margin: 0 auto;
 `;
 export const CardStyled = styled.div`
