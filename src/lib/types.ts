@@ -7,7 +7,7 @@ export interface Product {
   rate: number;
   id: number;
 }
-export interface CartProduct {
+export interface ICartProduct {
   title: string;
   img: string;
   price: number;

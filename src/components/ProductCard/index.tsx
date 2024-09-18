@@ -45,7 +45,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const handleClose = () => setOpen(false);
   const dispatch = useDispatch();
   const handleAddToCart = () => {
-    dispatch(addItem({ title: "", img: "", price: 0, quantity: 1 }));
+    const { title, img, price } = product;
+    dispatch(addItem({ title, img, price, quantity: 1 }));
   };
 
   return (
