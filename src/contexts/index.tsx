@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
+import i18n from "./i18n"; // импортируйте вашу конфигурацию i18n
 
 interface LanguageContextType {
   language: string;
@@ -13,6 +14,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [language, setLanguage] = useState<string>("en"); // Установите язык по умолчанию
+
+  useEffect(() => {
+    i18n.changeLanguage(language); // Изменяем язык в i18n
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>

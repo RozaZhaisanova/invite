@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useLanguage } from "../../contexts";
-
+import { useTranslation } from "react-i18next";
 const FooterContainer = styled.footer`
   display: flex;
   justify-content: space-between;
@@ -30,6 +30,7 @@ const PhoneLink = styled.a`
   }
 `;
 const Footer = () => {
+  const { t } = useTranslation();
   const { setLanguage } = useLanguage();
 
   const handleLanguageChange = (
