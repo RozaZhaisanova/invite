@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useLanguage } from "../../contexts";
 import { useTranslation } from "react-i18next";
 import { ButtonStyled } from "../CartProduct/styles";
+import { Logo } from "../Header/styles";
 const FooterContainer = styled.footer`
   box-shadow: 0px 0px 20px 0px #0000001a;
   width: 1110px;
@@ -15,7 +16,6 @@ const FooterContainer = styled.footer`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 `;
 const LanguageSelector = styled.select`
   padding: 0.5rem;
@@ -45,7 +45,7 @@ const FooterContent = styled.div`
 const Column = styled.div`
   margin: 0 20px; // Отступы между колонками
 `;
-const SiteName = styled.img`
+const SiteName = styled.div`
   padding-left: 29px;
   padding-top: 29px;
 `;
@@ -62,7 +62,9 @@ const Footer = () => {
 
   return (
     <FooterContainer>
-      <SiteName src="./assets/QPICK.png" alt="qpick" />
+      <SiteName>
+        <Logo to="/">QPICK</Logo>
+      </SiteName>
 
       <FooterContent>
         <Column></Column>

@@ -16,8 +16,7 @@ export const HeaderStyled = styled.header`
 export const Logo = styled(Link)`
   text-decoration: none;
   color: #101010;
-
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-size: 25px;
   font-weight: 700;
   line-height: 30.48px;
