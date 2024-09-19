@@ -27,8 +27,4 @@ export const TypographyOldPrice = styled(Typography)`
 export const DivStyled = styled.div`
   width: 306.04px;
   height: 68.05px;
-  top: 438.35px;
-  left: 963.96px;
-  gap: 0px;
-  opacity: 0px;
 `;

@@ -7,8 +7,6 @@ export const CartProductStyled = styled.div`
   border-radius: 30px;
   width: 633px;
   height: 218px;
-  top: 126px;
-  left: 165px;
 `;
 
 export const ImgStyled = styled.img`
@@ -28,4 +26,19 @@ export const Quantity = styled.div`
 export const ButtonStyled = styled.button`
   border: 0;
   background: transparent;
+`;
+export const Container = styled.div`
+  display: flex;
+  justify-content: space-between; /* Размещаем элементы по краям */
+  align-items: flex-start; /* Центрируем по вертикали */
+`;
+
+export const Content = styled.div`
+  display: flex;
+  align-items: center; /* Центрируем по вертикали */
+  flex-grow: 1; /* Позволяем этому блоку занимать свободное пространство */
+`;
+
+export const Price = styled.h3`
+  margin-left: auto; /* Сдвигаем цену вправо */
 `;

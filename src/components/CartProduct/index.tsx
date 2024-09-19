@@ -6,7 +6,14 @@ import {
 import { ICartProduct } from "../../lib/types";
 import { useDispatch } from "react-redux";
 import { Box, Button, CardContent } from "@mui/material";
-import { ButtonStyled, ImgStyled, Quantity } from "./styles";
+import {
+  ButtonStyled,
+  Container,
+  Content,
+  ImgStyled,
+  Price,
+  Quantity,
+} from "./styles";
 import { Item } from "../ProductCard";
 
 function CartProduct({ title, img, price, quantity }: ICartProduct) {
@@ -24,26 +31,33 @@ function CartProduct({ title, img, price, quantity }: ICartProduct) {
   return (
     <div>
       <CardContent>
-        <ImgStyled src={img} alt={title} />
-        <Quantity>
-          <Item>
-            <ButtonStyled onClick={handleDecreaseQuantity}>
-              <img src="./assets/-.svg" alt="minus" />
-            </ButtonStyled>
-          </Item>
-          <Item>
-            <p> {quantity}</p>
-          </Item>
-          <Item>
-            <ButtonStyled onClick={handleIncreaseQuantity}>
-              <img src="./assets/+.svg" alt="plus" />
-            </ButtonStyled>
-          </Item>
-        </Quantity>
-        <ButtonStyled onClick={handleRemoveCard}>
-          <img src="./assets/del.svg" alt="del" />
-        </ButtonStyled>
-        <h3>{price}</h3>
+        <Container>
+          <ButtonStyled onClick={handleRemoveCard}>
+            <img src="./assets/del.svg" alt="del" />
+          </ButtonStyled>
+          <Content>
+            <ImgStyled src={img} alt={title} />
+
+            <Quantity>
+              <Item>
+                <ButtonStyled onClick={handleDecreaseQuantity}>
+                  <img src="./assets/-.svg" alt="minus" />
+                </ButtonStyled>
+              </Item>
+              <Item>
+                <p>{quantity}</p>
+              </Item>
+              <Item>
+                <ButtonStyled onClick={handleIncreaseQuantity}>
+                  <img src="./assets/+.svg" alt="plus" />
+                </ButtonStyled>
+              </Item>
+            </Quantity>
+
+            <h3>{title}</h3>
+            <Price>{price}</Price>
+          </Content>
+        </Container>
       </CardContent>
     </div>
   );
