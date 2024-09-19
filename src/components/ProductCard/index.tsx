@@ -32,14 +32,6 @@ function Item(props: BoxProps) {
   );
 }
 
-const ImageComponent: React.FC<ImageProps> = ({ className, src, alt }) => {
-  return <Image className={className} src={src} alt={alt} />;
-};
-
-const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-`;
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -64,14 +56,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "230px",
+          height: "237.07px",
         }}
       >
-        <ImageComponent
-          className="my-image"
-          src={product.img}
-          alt={product.title}
-        />
+        <img src={product.img} alt={product.title} />
       </Box>
       <DivStyled>
         <Box

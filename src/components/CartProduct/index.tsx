@@ -5,6 +5,8 @@ import {
 } from "../../store/slices/cartSlice";
 import { ICartProduct } from "../../lib/types";
 import { useDispatch } from "react-redux";
+import { Box } from "@mui/material";
+import { ImgStyled } from "./styles";
 
 function CartProduct({ title, img, price, quantity }: ICartProduct) {
   const dispatch = useDispatch();
@@ -20,6 +22,8 @@ function CartProduct({ title, img, price, quantity }: ICartProduct) {
   };
   return (
     <div>
+      <ImgStyled src={img} alt={title} />
+
       <h3>{price}</h3>
       <p>Quantity: {quantity}</p>
       <button onClick={handleIncreaseQuantity}>+</button>

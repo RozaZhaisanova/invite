@@ -1,19 +1,18 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const HeaderStyled = styled.header`
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #f8f8f8;`
-;
+export const CartProductStyled = styled.div`
+  box-shadow: 0px 0px 20px 0px #0000001a;
+  background: #ffffff;
 
-export const Logo = styled(Link)`
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: #333;
+  border-radius: 30px;
+  width: 633px;
+  height: 218px;
+  top: 126px;
+  left: 165px;
+`;
 
-  &:hover {
-    color: #007bff;
-  }`
-;
+export const ImgStyled = styled.img`
+  max-width: 146.53px;
+  height: auto;
+  object-fit: contain;
+`;

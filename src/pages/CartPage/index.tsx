@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import PaymentModal from "../../components/PaymentModal";
+import { ContainerStyled } from "../../components/ProductList/styles";
+import { CartProductStyled } from "../../components/CartProduct/styles";
 function CartPage() {
   const cartItems = useSelector(selectCartItems);
   const navigate = useNavigate();
@@ -16,20 +18,22 @@ function CartPage() {
     0
   );
   return (
-    <div className="body">
+    <ContainerStyled>
       <main className="main">
         <h1>Корзина</h1>
         {cartItems.length === 0 ? (
           <p>Корзина пуста</p>
         ) : (
           cartItems.map((item) => (
-            <CartProduct
-              key={item.title}
-              title={item.title}
-              img={item.img}
-              price={item.price}
-              quantity={item.quantity}
-            />
+            <CartProductStyled>
+              <CartProduct
+                key={item.title}
+                title={item.title}
+                img={item.img}
+                price={item.price}
+                quantity={item.quantity}
+              />
+            </CartProductStyled>
           ))
         )}
         {totalPrice !== 0 ? (
@@ -43,7 +47,7 @@ function CartPage() {
 
         <PaymentModal open={open} handleClose={handleClose} />
       </main>
-    </div>
+    </ContainerStyled>
   );
 }
 
