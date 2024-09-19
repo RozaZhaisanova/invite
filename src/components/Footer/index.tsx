@@ -55,7 +55,45 @@ export const SocialIcons = styled.div`
   height: 30.1px;
   padding-top: 29px;
   display: flex;
-  align-items: center; /* Центрируем по вертикали */
+  align-items: center;
+`;
+const StyledList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+  width: 101px;
+  height: 82.8px;
+  top: 1513.72px;
+  left: 529px;
+
+  opacity: 0px;
+`;
+const StyledTypography = styled.p`
+  font-family: Montserrat;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 20.72px;
+  text-align: left;
+  text-decoration: none;
+`;
+const StyledListItem = styled.li`
+  font-family: Montserrat;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 20.72px;
+  text-align: left;
+  text-decoration: none;
+`;
+export const FooterLink = styled(Link)`
+  text-decoration: none;
+  font-family: Montserrat;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 20.72px;
+  text-align: left;
+  text-decoration: none;
+  color: #101010;
 `;
 const Footer = () => {
   const { t } = useTranslation();
@@ -69,20 +107,20 @@ const Footer = () => {
 
       <FooterContent>
         <Column>
-          <ul>
-            <li>
-              <Link to="/favourites">{t("favourites")}</Link>
-            </li>
-            <li>
-              <Link to="/cart">{t("cart")}</Link>
-            </li>
-            <li>
-              <Link to="/contacts">{t("contacts")}</Link>
-            </li>
-          </ul>
+          <StyledList>
+            <StyledListItem>
+              <FooterLink to="/favourites">{t("favourites")}</FooterLink>
+            </StyledListItem>
+            <StyledListItem>
+              <FooterLink to="/cart">{t("cart")}</FooterLink>
+            </StyledListItem>
+            <StyledListItem>
+              <FooterLink to="/contacts">{t("contacts")}</FooterLink>
+            </StyledListItem>
+          </StyledList>
         </Column>
         <Column>
-          <h2>{t("termsOfService")}</h2>
+          <StyledTypography>{t("termsOfService")}</StyledTypography>
           <SocialIcons>
             <img src="./assets/globus.png" alt="Иконка глобуса" />
             <ButtonStyled type="button" onClick={() => setLanguage("ru")}>
