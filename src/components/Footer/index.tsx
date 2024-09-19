@@ -49,6 +49,13 @@ const SiteName = styled.img`
   padding-left: 29px;
   padding-top: 29px;
 `;
+export const SocialIcons = styled.div`
+  width: 126.1px;
+  height: 30.1px;
+  padding-top: 29px;
+  display: flex;
+  align-items: center; /* Центрируем по вертикали */
+`;
 const Footer = () => {
   const { t } = useTranslation();
   const { setLanguage } = useLanguage();
@@ -61,7 +68,7 @@ const Footer = () => {
         <Column></Column>
         <Column>
           <h2>{t("termsOfService")}</h2>
-          <div>
+          <SocialIcons>
             <img src="./assets/globus.png" alt="Иконка глобуса" />
             <ButtonStyled type="button" onClick={() => setLanguage("ru")}>
               Рус
@@ -69,26 +76,28 @@ const Footer = () => {
             <ButtonStyled type="button" onClick={() => setLanguage("eng")}>
               Eng
             </ButtonStyled>
-          </div>
+          </SocialIcons>
         </Column>
       </FooterContent>
-      <SocialLink
-        href="https://vk.com/sqrtx"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="./assets/VK.svg" alt="VK" />
-      </SocialLink>
-      <SocialLink
-        href="https://t.me/fonelor"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src="./assets/Telegram.svg" alt="Telegram" />
-      </SocialLink>
-      <PhoneLink href="tel:+79805304119">
-        <img src="./assets/Whatsapp.svg" alt="Whatsapp" />
-      </PhoneLink>
+      <SocialIcons>
+        <SocialLink
+          href="https://vk.com/sqrtx"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="./assets/VK.svg" alt="VK" />
+        </SocialLink>
+        <SocialLink
+          href="https://t.me/fonelor"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="./assets/Telegram.svg" alt="Telegram" />
+        </SocialLink>
+        <PhoneLink href="tel:+79805304119">
+          <img src="./assets/Whatsapp.svg" alt="Whatsapp" />
+        </PhoneLink>
+      </SocialIcons>
     </FooterContainer>
   );
 };
