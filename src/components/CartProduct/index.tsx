@@ -5,8 +5,8 @@ import {
 } from "../../store/slices/cartSlice";
 import { ICartProduct } from "../../lib/types";
 import { useDispatch } from "react-redux";
-import { Box, CardContent } from "@mui/material";
-import { ImgStyled, Quantity } from "./styles";
+import { Box, Button, CardContent } from "@mui/material";
+import { ButtonStyled, ImgStyled, Quantity } from "./styles";
 import { Item } from "../ProductCard";
 
 function CartProduct({ title, img, price, quantity }: ICartProduct) {
@@ -25,24 +25,25 @@ function CartProduct({ title, img, price, quantity }: ICartProduct) {
     <div>
       <CardContent>
         <ImgStyled src={img} alt={title} />
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Quantity>
-            <Item>
-              <button onClick={handleDecreaseQuantity}>
-                <img src="./assets/-.svg" alt="minus" />
-              </button>
-            </Item>
-            <Item>
-              <p> {quantity}</p>
-            </Item>
-            <Item>
-              <button onClick={handleIncreaseQuantity}>
-                <img src="./assets/+.svg" alt="plus" />
-              </button>
-            </Item>
-          </Quantity>
-        </Box>
-        <button onClick={handleRemoveCard}>Удалить</button> <h3>{price}</h3>
+        <Quantity>
+          <Item>
+            <ButtonStyled onClick={handleDecreaseQuantity}>
+              <img src="./assets/-.svg" alt="minus" />
+            </ButtonStyled>
+          </Item>
+          <Item>
+            <p> {quantity}</p>
+          </Item>
+          <Item>
+            <ButtonStyled onClick={handleIncreaseQuantity}>
+              <img src="./assets/+.svg" alt="plus" />
+            </ButtonStyled>
+          </Item>
+        </Quantity>
+        <ButtonStyled onClick={handleRemoveCard}>
+          <img src="./assets/del.svg" alt="del" />
+        </ButtonStyled>
+        <h3>{price}</h3>
       </CardContent>
     </div>
   );

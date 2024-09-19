@@ -19,12 +19,13 @@ export const ImgStyled = styled.img`
 export const Quantity = styled.div`
   width: 118.21px;
   height: 30px;
-  top: 299px;
-  left: 198px;
-  gap: 0px;
-  opacity: 0px;
+  align-items: center;
   display: flex;
   justify-content: space-between;
 
   flex-direction: "row";
+`;
+export const ButtonStyled = styled.button`
+  border: 0;
+  background: transparent;
 `;
