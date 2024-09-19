@@ -32,9 +32,17 @@ function CartProduct({ title, img, price, quantity }: ICartProduct) {
     <div>
       <CardContent>
         <Container>
-          <ButtonStyled onClick={handleRemoveCard}>
-            <img src="./assets/del.svg" alt="del" />
-          </ButtonStyled>
+          <div
+            style={{
+              textAlign: "right",
+              display: "flex",
+            }}
+          >
+            <ButtonStyled onClick={handleRemoveCard}>
+              <img src="./assets/del.svg" alt="del" />
+            </ButtonStyled>
+          </div>
+
           <Content>
             <ImgStyled src={img} alt={title} />
 

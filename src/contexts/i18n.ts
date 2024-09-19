@@ -8,11 +8,17 @@ i18n
       en: {
         translation: {
           termsOfService: "Terms of service",
+          favourites: "Favourites",
+          cart: "Cart",
+          contacts: "Contacts",
         },
       },
       ru: {
         translation: {
           termsOfService: "Условия сервиса",
+          favourites: "Избранное",
+          cart: "Корзина",
+          contacts: "Контакты",
         },
       },
     },

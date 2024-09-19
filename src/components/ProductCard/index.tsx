@@ -45,7 +45,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <>
       <div style={{ textAlign: "right" }}>
-        <IconButton onClick={handleOpen} size="small">
+        <IconButton onClick={handleOpen} size="small" color="secondary">
           <InfoIcon />
         </IconButton>
 

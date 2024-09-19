@@ -4,6 +4,7 @@ import { useLanguage } from "../../contexts";
 import { useTranslation } from "react-i18next";
 import { ButtonStyled } from "../CartProduct/styles";
 import { Logo } from "../Header/styles";
+import { Link } from "react-router-dom";
 const FooterContainer = styled.footer`
   box-shadow: 0px 0px 20px 0px #0000001a;
   width: 1110px;
@@ -67,7 +68,19 @@ const Footer = () => {
       </SiteName>
 
       <FooterContent>
-        <Column></Column>
+        <Column>
+          <ul>
+            <li>
+              <Link to="/favourites">{t("favourites")}</Link>
+            </li>
+            <li>
+              <Link to="/cart">{t("cart")}</Link>
+            </li>
+            <li>
+              <Link to="/contacts">{t("contacts")}</Link>
+            </li>
+          </ul>
+        </Column>
         <Column>
           <h2>{t("termsOfService")}</h2>
           <SocialIcons>
