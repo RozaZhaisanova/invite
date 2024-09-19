@@ -16,3 +16,15 @@ export const ImgStyled = styled.img`
   height: auto;
   object-fit: contain;
 `;
+export const Quantity = styled.div`
+  width: 118.21px;
+  height: 30px;
+  top: 299px;
+  left: 198px;
+  gap: 0px;
+  opacity: 0px;
+  display: flex;
+  justify-content: space-between;
+
+  flex-direction: "row";
+`;

@@ -12,7 +12,7 @@ import ProductModal from "../ProductModal";
 import { TypographyOldPrice } from "./styles";
 import { addItem } from "../../store/slices/cartSlice";
 import { DivStyled } from "./styles";
-function Item(props: BoxProps) {
+export function Item(props: BoxProps) {
   const { sx, ...other } = props;
   return (
     <Box
