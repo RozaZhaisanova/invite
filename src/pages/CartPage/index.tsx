@@ -7,6 +7,7 @@ import { Button } from "@mui/material";
 import PaymentModal from "../../components/PaymentModal";
 import { ContainerStyled } from "../../components/ProductList/styles";
 import { CartProductStyled } from "../../components/CartProduct/styles";
+import { ColumnStyled, DivStyled, TotalStyled } from "./styles";
 function CartPage() {
   const cartItems = useSelector(selectCartItems);
   const navigate = useNavigate();
@@ -21,29 +22,54 @@ function CartPage() {
     <ContainerStyled>
       <main className="main">
         <h1>Корзина</h1>
-        {cartItems.length === 0 ? (
-          <p>Корзина пуста</p>
-        ) : (
-          cartItems.map((item) => (
-            <CartProductStyled>
-              <CartProduct
-                key={item.title}
-                title={item.title}
-                img={item.img}
-                price={item.price}
-                quantity={item.quantity}
-              />
-            </CartProductStyled>
-          ))
-        )}
+        <DivStyled>
+          {cartItems.length === 0 ? (
+            <p>Корзина пуста</p>
+          ) : (
+            cartItems.map((item) => (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  marginTop: "20px",
+                }}
+              >
+                <CartProductStyled>
+                  <CartProduct
+                    key={item.title}
+                    title={item.title}
+                    img={item.img}
+                    price={item.price}
+                    quantity={item.quantity}
+                  />
+                </CartProductStyled>
+              </div>
+            ))
+          )}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              marginTop: "20px",
+            }}
+          >
+            {totalPrice !== 0 ? (
+              <TotalStyled>
+                ₽ {totalPrice}
+                <Button onClick={handleOpen}>Переход к оформлению</Button>
+              </TotalStyled>
+            ) : (
+              <span>emptyCart</span>
+            )}
+          </div>
+          <ColumnStyled>ff</ColumnStyled>
+          <ColumnStyled>ff</ColumnStyled>
+        </DivStyled>
         {totalPrice !== 0 ? (
-          <span>₽ {totalPrice}</span>
+          <TotalStyled>₽ {totalPrice}</TotalStyled>
         ) : (
           <span>emptyCart</span>
         )}
-        <button onClick={() => navigate("/")}>Back to Catalog</button>
-
-        <Button onClick={handleOpen}>Переход к оформлению</Button>
 
         <PaymentModal open={open} handleClose={handleClose} />
       </main>
