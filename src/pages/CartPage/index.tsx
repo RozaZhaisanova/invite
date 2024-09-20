@@ -8,6 +8,7 @@ import PaymentModal from "../../components/PaymentModal";
 import { ContainerStyled } from "../../components/ProductList/styles";
 import { CartProductStyled } from "../../components/CartProduct/styles";
 import { ColumnStyled, PaymentButtonStyled, TotalStyled } from "./styles";
+import { useTranslation } from "react-i18next";
 function CartPage() {
   const cartItems = useSelector(selectCartItems);
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ function CartPage() {
     (total, item) => total + item.price * item.quantity,
     0
   );
+  const { t } = useTranslation();
   return (
     <ContainerStyled>
       <main className="main">
@@ -73,9 +75,20 @@ function CartPage() {
             >
               {totalPrice !== 0 ? (
                 <TotalStyled>
-                  ₽ {totalPrice}
+                  <Box
+                    sx={{
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      display: "flex",
+                      flexDirection: "row",
+                      width: "311.22px",
+                      height: "55px",
+                    }}
+                  >
+                    <span>{t("total")}</span>₽ {totalPrice}
+                  </Box>
                   <PaymentButtonStyled onClick={handleOpen}>
-                    Переход к оформлению
+                    Перейти к оформлению
                   </PaymentButtonStyled>
                 </TotalStyled>
               ) : (

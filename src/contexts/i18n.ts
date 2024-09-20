@@ -11,6 +11,7 @@ i18n
           favourites: "Favourites",
           cart: "Cart",
           contacts: "Contacts",
+          total: "TOTAL",
         },
       },
       ru: {
@@ -19,6 +20,7 @@ i18n
           favourites: "Избранное",
           cart: "Корзина",
           contacts: "Контакты",
+          total: "ИТОГО",
         },
       },
     },
