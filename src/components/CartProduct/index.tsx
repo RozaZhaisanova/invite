@@ -6,14 +6,7 @@ import {
 import { ICartProduct } from "../../lib/types";
 import { useDispatch } from "react-redux";
 import { Box, Button, CardContent } from "@mui/material";
-import {
-  ButtonStyled,
-  Container,
-  Content,
-  ImgStyled,
-  Price,
-  Quantity,
-} from "./styles";
+import { ButtonStyled, Content, ImgStyled, Price, Quantity } from "./styles";
 import { Item } from "../ProductCard";
 
 function CartProduct({ title, img, price, quantity }: ICartProduct) {
@@ -31,19 +24,15 @@ function CartProduct({ title, img, price, quantity }: ICartProduct) {
   return (
     <div>
       <CardContent>
-        <Container>
-          <div
-            style={{
-              textAlign: "right",
+        <Content>
+          <Box
+            sx={{
               display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
             }}
           >
-            <ButtonStyled onClick={handleRemoveCard}>
-              <img src="./assets/del.svg" alt="del" />
-            </ButtonStyled>
-          </div>
-
-          <Content>
             <ImgStyled src={img} alt={title} />
 
             <Quantity>
@@ -61,11 +50,33 @@ function CartProduct({ title, img, price, quantity }: ICartProduct) {
                 </ButtonStyled>
               </Item>
             </Quantity>
-
-            <h3>{title}</h3>
-            <Price>{price}</Price>
-          </Content>
-        </Container>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "space-between",
+              flexDirection: "row",
+            }}
+          >
+            <Box>
+              <h3>{title}</h3>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+              }}
+            >
+              <ButtonStyled onClick={handleRemoveCard}>
+                <img src="./assets/del.svg" alt="del" />
+              </ButtonStyled>
+              <Price>{price}</Price>
+            </Box>
+          </Box>
+        </Content>
       </CardContent>
     </div>
   );

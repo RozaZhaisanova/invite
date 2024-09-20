@@ -11,7 +11,7 @@ export const CartProductStyled = styled.div`
 
 export const ImgStyled = styled.img`
   max-width: 146.53px;
-  height: auto;
+  max-height: 136px;
   object-fit: contain;
 `;
 export const Quantity = styled.div`
@@ -26,11 +26,6 @@ export const Quantity = styled.div`
 export const ButtonStyled = styled.button`
   border: 0;
   background: transparent;
-`;
-export const Container = styled.div`
-  display: flex;
-  justify-content: space-between; /* Размещаем элементы по краям */
-  align-items: flex-start; /* Центрируем по вертикали */
 `;
 
 export const Content = styled.div`

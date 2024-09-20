@@ -39,8 +39,6 @@ function CartPage() {
               cartItems.map((item) => (
                 <div
                   style={{
-                    display: "flex",
-                    justifyContent: "flex-start",
                     marginTop: "20px",
                   }}
                 >
