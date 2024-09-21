@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import styled from "styled-components";
 
 export const CartProductStyled = styled.div`
@@ -29,11 +30,38 @@ export const ButtonStyled = styled.button`
 `;
 
 export const Content = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center; /* Центрируем по вертикали */
-  flex-grow: 1; /* Позволяем этому блоку занимать свободное пространство */
+  align-items: space-between;
+  justify-content: space-between;
+  position: relative;
 `;
-
+export const CartProductMiddle = styled.div`
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  row-gap: 12px;
+`;
 export const Price = styled.h3`
   margin-left: auto; /* Сдвигаем цену вправо */
+`;
+export const CartProductBox = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+`;
+export const CartProductStart = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 19px;
+`;
+export const CartProductContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 23px;
 `;

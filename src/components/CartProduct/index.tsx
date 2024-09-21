@@ -6,7 +6,17 @@ import {
 import { ICartProduct } from "../../lib/types";
 import { useDispatch } from "react-redux";
 import { Box, Button, CardContent } from "@mui/material";
-import { ButtonStyled, Content, ImgStyled, Price, Quantity } from "./styles";
+import {
+  ButtonStyled,
+  CartProductBox,
+  CartProductContent,
+  CartProductMiddle,
+  CartProductStart,
+  Content,
+  ImgStyled,
+  Price,
+  Quantity,
+} from "./styles";
 import { Item } from "../ProductCard";
 
 function CartProduct({ title, img, price, quantity }: ICartProduct) {
@@ -25,56 +35,44 @@ function CartProduct({ title, img, price, quantity }: ICartProduct) {
     <div>
       <CardContent>
         <Content>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "column",
-            }}
-          >
-            <ImgStyled src={img} alt={title} />
+          <CartProductContent>
+            <CartProductStart>
+              <ImgStyled src={img} alt={title} />
 
-            <Quantity>
-              <Item>
-                <ButtonStyled onClick={handleDecreaseQuantity}>
-                  <img src="./assets/-.svg" alt="minus" />
-                </ButtonStyled>
-              </Item>
-              <Item>
-                <p>{quantity}</p>
-              </Item>
-              <Item>
-                <ButtonStyled onClick={handleIncreaseQuantity}>
-                  <img src="./assets/+.svg" alt="plus" />
-                </ButtonStyled>
-              </Item>
-            </Quantity>
-          </Box>
+              <Quantity>
+                <Item>
+                  <ButtonStyled onClick={handleDecreaseQuantity}>
+                    <img src="./assets/-.svg" alt="minus" />
+                  </ButtonStyled>
+                </Item>
+                <Item>
+                  <p>{quantity}</p>
+                </Item>
+                <Item>
+                  <ButtonStyled onClick={handleIncreaseQuantity}>
+                    <img src="./assets/+.svg" alt="plus" />
+                  </ButtonStyled>
+                </Item>
+              </Quantity>
+            </CartProductStart>
+
+            <CartProductMiddle>
+              <h3>{title}</h3>
+            </CartProductMiddle>
+          </CartProductContent>
           <Box
             sx={{
               display: "flex",
               justifyContent: "space-between",
-              alignItems: "space-between",
               flexDirection: "row",
             }}
           >
-            <Box>
-              <h3>{title}</h3>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                flexDirection: "column",
-              }}
-            >
+            <CartProductBox>
               <ButtonStyled onClick={handleRemoveCard}>
                 <img src="./assets/del.svg" alt="del" />
               </ButtonStyled>
               <Price>{price}</Price>
-            </Box>
+            </CartProductBox>
           </Box>
         </Content>
       </CardContent>
