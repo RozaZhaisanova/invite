@@ -7,7 +7,12 @@ import { Box, Button } from "@mui/material";
 import PaymentModal from "../../components/PaymentModal";
 import { ContainerStyled } from "../../components/ProductList/styles";
 import { CartProductStyled } from "../../components/CartProduct/styles";
-import { ColumnStyled, PaymentButtonStyled, TotalStyled } from "./styles";
+import {
+  CartTotal,
+  ColumnStyled,
+  PaymentButtonStyled,
+  TotalStyled,
+} from "./styles";
 import { useTranslation } from "react-i18next";
 function CartPage() {
   const cartItems = useSelector(selectCartItems);
@@ -81,9 +86,11 @@ function CartPage() {
                       flexDirection: "row",
                       width: "311.22px",
                       height: "55px",
+                      paddingLeft: "20px",
                     }}
                   >
-                    <span>{t("total")}</span>₽ {totalPrice}
+                    <CartTotal>{t("total")}</CartTotal>
+                    <CartTotal> ₽ {totalPrice}</CartTotal>
                   </Box>
                   <PaymentButtonStyled onClick={handleOpen}>
                     Перейти к оформлению

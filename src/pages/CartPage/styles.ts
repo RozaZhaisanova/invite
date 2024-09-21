@@ -34,3 +34,11 @@ export const PaymentButtonStyled = styled.button`
   opacity: 0px;
   color: #ffffff;
 `;
+export const CartTotal = styled.span`
+  color: #000000;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18.29px;
+  text-align: left;
+`;
