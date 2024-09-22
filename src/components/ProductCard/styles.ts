@@ -86,6 +86,10 @@ export const ProductCardBuy = styled.button`
   border: none;
   padding: 0;
   padding: 5px 10px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
 `;
 export const ProductCardTitle = styled.h3`
   font-family: Montserrat;

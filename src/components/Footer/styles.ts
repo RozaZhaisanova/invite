@@ -18,9 +18,8 @@ export const FooterContainer = styled.footer`
 export const SocialLink = styled.a`
   text-decoration: none;
   color: #007bff;
-
   &:hover {
-    text-decoration: underline;
+    opacity: 0.7;
   }
 `;
 
@@ -29,7 +28,7 @@ export const PhoneLink = styled.a`
   color: #007bff;
 
   &:hover {
-    text-decoration: underline;
+    opacity: 0.7;
   }
 `;
 export const FooterContent = styled.div`
@@ -99,6 +98,9 @@ export const StyledListItem = styled.li`
   line-height: 20.72px;
   text-align: left;
   text-decoration: none;
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 export const FooterLink = styled(Link)`
   text-decoration: none;

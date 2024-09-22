@@ -23,6 +23,10 @@ export const Quantity = styled.div`
 export const ButtonStyled = styled.button`
   border: 0;
   background: transparent;
+  &:hover {
+    opacity: 0.5;
+  }
+  cursor: pointer;
 `;
 
 export const Content = styled.div`

@@ -18,9 +18,12 @@ export const Header = () => {
         </Link>
 
         <Link to="/cart">
-          <Badge badgeContent={Object.keys(cartItems).length} color="secondary">
+          <Counter
+            badgeContent={Object.keys(cartItems).length}
+            color="secondary"
+          >
             <img src="./assets/Vector.svg" alt="Корзина" />
-          </Badge>
+          </Counter>
         </Link>
       </HeaderEnd>
     </HeaderStyled>

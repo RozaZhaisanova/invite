@@ -21,6 +21,9 @@ export const Logo = styled(Link)`
   font-weight: 700;
   line-height: 30.48px;
   text-align: left;
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 export const HeaderEnd = styled.div`
   width: 94.4px;
@@ -36,4 +39,7 @@ export const Counter = styled(Badge)`
   width: 25px;
   height: 25px;
   border-radius: inherit;
+  &:hover {
+    opacity: 0.7;
+  }
 `;

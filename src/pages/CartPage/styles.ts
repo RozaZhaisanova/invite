@@ -33,6 +33,10 @@ export const PaymentButtonStyled = styled.button`
   border-radius: 20px;
   opacity: 0px;
   color: #ffffff;
+  &:hover {
+    opacity: 0.7;
+  }
+  cursor: pointer;
 `;
 export const CartTotal = styled.span`
   color: #000000;
