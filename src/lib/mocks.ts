@@ -18,8 +18,7 @@ export const headphones = [
   },
   {
     img: "./assets/3.png",
-    title:
-      "Bose QuietComfort 35 II серый 2.0, охватывающие, Bluetooth, проводной, кабель - 1.2 м",
+    title: "Bose QuietComfort 35",
     price: 2999,
     rate: 4.6,
     id: 3,

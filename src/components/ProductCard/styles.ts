@@ -38,10 +38,11 @@ export const DivStyled = styled.div`
 export const ProductCardTitleAndPrice = styled.div`
   height: 45px;
   display: flex;
-  align-items: start;
   justify-content: space-between;
+  align-items: start;
 `;
 export const ProductCardPriceBox = styled.div`
+  padding-right: 10px;
   display: flex;
   flex-direction: column;
 
@@ -98,6 +99,7 @@ export const ProductCardTitle = styled.h3`
   line-height: 20.72px;
   text-align: left;
   color: #1c1c27;
+  padding-left: 5px;
 `;
 export const ProductRate = styled(ProductCardTitle)`
   color: #838383;
@@ -105,10 +107,7 @@ export const ProductRate = styled(ProductCardTitle)`
 export const ProductCardStar = styled.div`
   width: 60.33px;
   height: 21.97px;
-  top: 484.44px;
-  left: 203.96px;
-  gap: 0px;
-  opacity: 0px;
+  padding-left: 3px;
   display: flex;
   align-items: center;
   justify-content: space-between;

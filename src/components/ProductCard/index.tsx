@@ -78,8 +78,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <DivStyled>
         <ProductCardTitleAndPrice>
           <ProductCardTitle>
-            {product.title.length > 25
-              ? `${product.title.slice(0, 25)}...`
+            {product.title.length > 20
+              ? `${product.title.slice(0, 20)}...`
               : product.title}
           </ProductCardTitle>
 
