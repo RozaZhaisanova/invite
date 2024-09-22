@@ -88,7 +88,7 @@ function CartPage() {
                   <CartTotal> ₽ {totalPrice}</CartTotal>
                 </Box>
                 <PaymentButtonStyled onClick={handleOpen}>
-                  <PaymentButtonTitle>Перейти к оформлению</PaymentButtonTitle>
+                  <PaymentButtonTitle>{t("goToCheckout")}</PaymentButtonTitle>
                 </PaymentButtonStyled>
               </TotalStyled>
             ) : (

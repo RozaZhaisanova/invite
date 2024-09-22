@@ -9,11 +9,11 @@ import {
 import CardContent from "@mui/material/CardContent";
 import { getHeadphones } from "../../lib/api";
 import { Product } from "../../lib/types";
-
+import { useTranslation } from "react-i18next";
 export const ProductList = () => {
   const [headphones, setHeadphones] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-
+  const { t } = useTranslation();
   useEffect(() => {
     const fetchHeadphones = async () => {
       setIsLoading(true);
@@ -36,7 +36,7 @@ export const ProductList = () => {
     <ContainerStyled>
       {wired.length > 0 && (
         <>
-          <CatalogTitle> Наушники</CatalogTitle>
+          <CatalogTitle> {t("headphones")}</CatalogTitle>
           <ProductGrid>
             {wired.map((product) => (
               <CardStyled key={product.id}>
@@ -50,7 +50,7 @@ export const ProductList = () => {
       )}
       {wireless.length > 0 && (
         <>
-          <CatalogTitle>Беспроводные наушники</CatalogTitle>
+          <CatalogTitle>{t("wirelessHeadphones")}</CatalogTitle>
           <ProductGrid>
             {wireless.map((product) => (
               <CardStyled key={product.id}>
