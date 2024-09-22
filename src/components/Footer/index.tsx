@@ -14,6 +14,8 @@ import {
   SocialIcons,
   SocialLink,
   PhoneLink,
+  Lang,
+  ColumnRight,
 } from "./styles";
 
 const Footer = () => {
@@ -40,9 +42,9 @@ const Footer = () => {
             </StyledListItem>
           </StyledList>
         </Column>
-        <Column>
+        <ColumnRight>
           <StyledTypography>{t("termsOfService")}</StyledTypography>
-          <SocialIcons>
+          <Lang>
             <img src="./assets/globus.png" alt="Иконка глобуса" />
             <ButtonStyled type="button" onClick={() => setLanguage("ru")}>
               Рус
@@ -50,8 +52,8 @@ const Footer = () => {
             <ButtonStyled type="button" onClick={() => setLanguage("eng")}>
               Eng
             </ButtonStyled>
-          </SocialIcons>
-        </Column>
+          </Lang>
+        </ColumnRight>
       </FooterContent>
       <SocialIcons>
         <SocialLink

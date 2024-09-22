@@ -23,7 +23,7 @@ export const Logo = styled(Link)`
   text-align: left;
 `;
 export const HeaderEnd = styled.div`
-  width: 79.4px;
+  width: 94.4px;
   justify-content: space-between;
   align-items: center;
   display: flex;

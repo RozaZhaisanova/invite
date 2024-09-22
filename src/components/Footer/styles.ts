@@ -23,6 +23,7 @@ export const SocialLink = styled.a`
     text-decoration: underline;
   }
 `;
+
 export const PhoneLink = styled.a`
   text-decoration: none;
   color: #007bff;
@@ -33,12 +34,16 @@ export const PhoneLink = styled.a`
 `;
 export const FooterContent = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  width: 427px;
+  height: 100%;
 `;
 
-export const Column = styled.div`
-  margin: 0 20px; // Отступы между колонками
+export const Column = styled.div``;
+export const ColumnRight = styled.div`
+  margin-bottom: 17px;
 `;
 export const SiteName = styled.div`
   padding-left: 29px;
@@ -53,6 +58,18 @@ export const SocialIcons = styled.div`
   justify-content: space-between;
   padding-right: 29px;
 `;
+export const Lang = styled.div`
+  width: 111px;
+  height: 20px;
+  top: 1570px;
+  left: 802px;
+  gap: 0px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
 export const StyledList = styled.ul`
   list-style-type: none;
   padding: 0;
@@ -91,5 +108,5 @@ export const FooterLink = styled(Link)`
   line-height: 20.72px;
   text-align: left;
   text-decoration: none;
-  color: #101010;
+  color: #000000;
 `;
