@@ -12,6 +12,8 @@ i18n
           cart: "Cart",
           contacts: "Contacts",
           total: "TOTAL",
+          emptyCart: "Cart is empty",
+          backToCatalog: "Back to Catalog",
         },
       },
       ru: {
@@ -21,6 +23,8 @@ i18n
           cart: "Корзина",
           contacts: "Контакты",
           total: "ИТОГО",
+          emptyCart: "Корзина пуста",
+          backToCatalog: "Вернуться в каталог",
         },
       },
     },

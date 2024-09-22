@@ -28,7 +28,7 @@ function CartPage() {
   const { t } = useTranslation();
   return (
     <ContainerStyled>
-      <CartTitle>Корзина</CartTitle>
+      <CartTitle>{t("cart")}</CartTitle>
       <Box
         sx={{
           justifyContent: "space-between",
@@ -39,7 +39,10 @@ function CartPage() {
       >
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           {cartItems.length === 0 ? (
-            <p>Корзина пуста</p>
+            <button onClick={() => navigate("/")}>
+              {" "}
+              <CartTotal> {t("backToCatalog")}</CartTotal>
+            </button>
           ) : (
             cartItems.map((item) => (
               <CartProductStyled>
@@ -90,7 +93,21 @@ function CartPage() {
                 </PaymentButtonStyled>
               </TotalStyled>
             ) : (
-              <span>emptyCart</span>
+              <TotalStyled>
+                <Box
+                  sx={{
+                    justifyContent: "center",
+                    alignItems: "center",
+                    display: "flex",
+                    flexDirection: "row",
+                    width: "311.22px",
+                    height: "100%",
+                    paddingLeft: "20px",
+                  }}
+                >
+                  <CartTotal>{t("emptyCart")}</CartTotal>
+                </Box>
+              </TotalStyled>
             )}
           </div>
         </Box>
