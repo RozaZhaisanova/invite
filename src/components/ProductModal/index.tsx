@@ -22,8 +22,14 @@ const ProductModal: React.FC<ProductModalProps> = ({
     <Modal open={open} onClose={handleClose}>
       <Box sx={style}>
         <Typography variant="h6">{product.title}</Typography>
-        <Typography sx={{ mt: 2 }}>{product.rate}</Typography>
-        <Button onClick={handleClose} variant="outlined">
+        <Typography>Цена: {product.price}</Typography>
+
+        <Typography>Рейтинг: {product.rate}</Typography>
+        <Button
+          sx={{ marginTop: "20px" }}
+          onClick={handleClose}
+          variant="outlined"
+        >
           Закрыть
         </Button>
       </Box>
