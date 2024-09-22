@@ -31,14 +31,35 @@ export const DivStyled = styled.div`
   left: 203.96px;
   gap: 0px;
   opacity: 0px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
 `;
+export const ProductCardTitleAndPrice = styled.div`
+  height: 45px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+`;
+export const ProductCardPriceBox = styled.div`
+  display: flex;
+  flex-direction: column;
 
+  align-items: center;
+`;
+export const ProductCardFooter = styled.footer`
+  min-height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 export const ProductCardPrice = styled.h3`
   font-family: Montserrat;
   font-size: 17px;
   font-weight: 600;
   line-height: 20.72px;
   text-align: left;
+  margin-bottom: 0;
   color: #ffa542;
 `;
 export const ProductCardOldPrice = styled.h3`
@@ -47,6 +68,8 @@ export const ProductCardOldPrice = styled.h3`
   font-weight: 600;
   line-height: 15.85px;
   text-align: left;
+  margin: 0;
+  padding: 0;
   color: #ffce7f;
   text-decoration: line-through;
 `;
@@ -78,4 +101,15 @@ export const ProductRate = styled.h2`
   line-height: 20.72px;
   text-align: left;
   color: #838383;
+`;
+export const ProductCardStar = styled.div`
+  width: 60.33px;
+  height: 21.97px;
+  top: 484.44px;
+  left: 203.96px;
+  gap: 0px;
+  opacity: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;

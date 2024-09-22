@@ -16,6 +16,10 @@ import {
   ProductCardBuy,
   ProductCardTitle,
   ProductRate,
+  ProductCardStar,
+  ProductCardTitleAndPrice,
+  ProductCardPriceBox,
+  ProductCardFooter,
 } from "./styles";
 import { addItem } from "../../store/slices/cartSlice";
 import { useTranslation } from "react-i18next";
@@ -55,7 +59,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <>
       <div style={{ textAlign: "right" }}>
-        <IconButton onClick={handleOpen} size="small" color="secondary">
+        <IconButton onClick={handleOpen} size="small" color="primary">
           <InfoIcon />
         </IconButton>
 
@@ -72,65 +76,33 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <img src={product.img} alt={product.title} />
       </Box>
       <DivStyled>
-        <Box
-          sx={{
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-            display: "flex",
-            flexDirection: "row",
-          }}
-        >
-          <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <ProductCardTitle>
-              {product.title.length > 25
-                ? `${product.title.slice(0, 25)}...`
-                : product.title}
-            </ProductCardTitle>
-          </Box>
+        <ProductCardTitleAndPrice>
+          <ProductCardTitle>
+            {product.title.length > 25
+              ? `${product.title.slice(0, 25)}...`
+              : product.title}
+          </ProductCardTitle>
 
-          <Box
-            sx={{
-              textAlign: "right",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-end",
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                flexDirection: "column",
-              }}
-            >
-              <ProductCardPrice>{product.price}₽</ProductCardPrice>
-              <ProductCardOldPrice>
-                {product.oldPrice ? product.oldPrice + " ₽" : ""}
-              </ProductCardOldPrice>
-            </Box>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-            display: "flex",
-            flexDirection: "row",
-          }}
-        >
-          <Box sx={{ display: "flex", alignItems: "center" }}>
+          <ProductCardPriceBox>
+            <ProductCardPrice>{product.price}₽</ProductCardPrice>
+            <ProductCardOldPrice>
+              {product.oldPrice ? product.oldPrice + " ₽" : ""}
+            </ProductCardOldPrice>
+          </ProductCardPriceBox>
+        </ProductCardTitleAndPrice>
+        <ProductCardFooter>
+          <ProductCardStar>
             <Item>
               <img src="./assets/star.png" alt="Star" />
             </Item>
             <Item>
               <ProductRate>{product.rate}</ProductRate>
             </Item>
-          </Box>
+          </ProductCardStar>
           <ProductCardBuy onClick={handleAddToCart}>
             <ProductCardBuyTitle>{t("buy")}</ProductCardBuyTitle>
           </ProductCardBuy>
-        </Box>
+        </ProductCardFooter>
       </DivStyled>
     </>
   );
