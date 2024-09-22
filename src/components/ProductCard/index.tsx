@@ -20,7 +20,10 @@ import {
   ProductCardTitleAndPrice,
   ProductCardPriceBox,
   ProductCardFooter,
+  ProductCardInCartTitle
 } from "./styles";
+import { useSelector } from "react-redux";
+import { selectCartItems } from "../../store/slices/cartSlice";
 import { increaseQuantity, addItem } from "../../store/slices/cartSlice";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -46,7 +49,9 @@ export function Item(props: BoxProps) {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const [inCart, setInCart] = useState(false);
+  const cartItems = useSelector(selectCartItems);
+  const isCardInCart = cartItems.some((item) => item.title === product.title);
+
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -54,11 +59,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleAddToCart = () => {
-    if (!inCart) {
-      const { title, img, price } = product;
-      dispatch(addItem({ title, img, price, quantity: 1 }));
-      setInCart(true);
-    }
+    const { title, img, price } = product;
+    dispatch(addItem({ title, img, price, quantity: 1 }));
   };
 
   return (
@@ -104,9 +106,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               <ProductRate>{product.rate}</ProductRate>
             </Item>
           </ProductCardStar>
-          {inCart ? (
+          {isCardInCart ? (
             <ProductCardBuy onClick={() => navigate("/cart")}>
-              <ProductCardBuyTitle>{t("inCart")}</ProductCardBuyTitle>
+              <ProductCardInCartTitle>
+                {t("inCart")}
+              </ProductCardInCartTitle>
             </ProductCardBuy>
           ) : (
             <ProductCardBuy onClick={handleAddToCart}>

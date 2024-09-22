@@ -82,6 +82,14 @@ export const ProductCardBuyTitle = styled.h3`
   text-align: left;
   color: #000000;
 `;
+export const ProductCardInCartTitle = styled.h3`
+  font-family: Montserrat;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20.72px;
+  text-align: left;
+  color: #838383;
+`;
 export const ProductCardBuy = styled.button`
   background-color: transparent;
   border: none;

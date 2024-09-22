@@ -13,6 +13,10 @@ export const ImgStyled = styled.img`
   max-height: 136px;
   object-fit: contain;
 `;
+export const ImgBox = styled.div`
+  width: 146.53px;
+  height: 136px;
+`;
 export const Quantity = styled.div`
   width: 118.21px;
   height: 30px;

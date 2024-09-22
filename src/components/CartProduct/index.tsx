@@ -16,6 +16,7 @@ import {
   CartProductStart,
   CartProductTitle,
   Content,
+  ImgBox,
   ImgStyled,
   Price,
   Quantity,
@@ -39,8 +40,9 @@ function CartProduct({ title, img, price, quantity }: ICartProduct) {
       <Content>
         <CartProductContent>
           <CartProductStart>
-            <ImgStyled src={img} alt={title} />
-
+            <ImgBox>
+              <ImgStyled src={img} alt={title} />
+            </ImgBox>
             <Quantity>
               <Item>
                 <ButtonStyled onClick={handleDecreaseQuantity}>
