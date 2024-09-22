@@ -93,13 +93,9 @@ export const ProductCardTitle = styled.h3`
   font-weight: 600;
   line-height: 20.72px;
   text-align: left;
+  color: #1c1c27;
 `;
-export const ProductRate = styled.h2`
-  font-family: Montserrat;
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 20.72px;
-  text-align: left;
+export const ProductRate = styled(ProductCardTitle)`
   color: #838383;
 `;
 export const ProductCardStar = styled.div`
