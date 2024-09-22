@@ -15,6 +15,7 @@ i18n
           emptyCart: "Cart is empty",
           backToCatalog: "Back to Catalog",
           buy: "Buy",
+          inCart: "In cart",
         },
       },
       ru: {
@@ -27,6 +28,7 @@ i18n
           emptyCart: "Корзина пуста",
           backToCatalog: "Вернуться в каталог",
           buy: "Купить",
+          inCart: "В корзине",
         },
       },
     },

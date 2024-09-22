@@ -21,9 +21,9 @@ import {
   ProductCardPriceBox,
   ProductCardFooter,
 } from "./styles";
-import { addItem } from "../../store/slices/cartSlice";
+import { increaseQuantity, addItem } from "../../store/slices/cartSlice";
 import { useTranslation } from "react-i18next";
-
+import { useNavigate } from "react-router-dom";
 import { DivStyled } from "./styles";
 export function Item(props: BoxProps) {
   const { sx, ...other } = props;
@@ -46,14 +46,19 @@ export function Item(props: BoxProps) {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const [inCart, setInCart] = useState(false);
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleAddToCart = () => {
-    const { title, img, price } = product;
-    dispatch(addItem({ title, img, price, quantity: 1 }));
+    if (!inCart) {
+      const { title, img, price } = product;
+      dispatch(addItem({ title, img, price, quantity: 1 }));
+      setInCart(true);
+    }
   };
 
   return (
@@ -99,9 +104,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               <ProductRate>{product.rate}</ProductRate>
             </Item>
           </ProductCardStar>
-          <ProductCardBuy onClick={handleAddToCart}>
-            <ProductCardBuyTitle>{t("buy")}</ProductCardBuyTitle>
-          </ProductCardBuy>
+          {inCart ? (
+            <ProductCardBuy onClick={() => navigate("/cart")}>
+              <ProductCardBuyTitle>{t("inCart")}</ProductCardBuyTitle>
+            </ProductCardBuy>
+          ) : (
+            <ProductCardBuy onClick={handleAddToCart}>
+              <ProductCardBuyTitle>{t("buy")}</ProductCardBuyTitle>
+            </ProductCardBuy>
+          )}
         </ProductCardFooter>
       </DivStyled>
     </>

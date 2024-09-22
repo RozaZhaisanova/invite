@@ -42,7 +42,7 @@ export const ProductCardTitleAndPrice = styled.div`
   align-items: start;
 `;
 export const ProductCardPriceBox = styled.div`
-  padding-right: 10px;
+  padding-right: 5px;
   display: flex;
   flex-direction: column;
 

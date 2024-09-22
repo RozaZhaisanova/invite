@@ -1,7 +1,7 @@
 import CartProduct from "../../components/CartProduct";
 import { useSelector } from "react-redux";
 import { selectCartItems } from "../../store/slices/cartSlice";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import PaymentModal from "../../components/PaymentModal";
