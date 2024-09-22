@@ -1,5 +1,3 @@
-import { Button } from "@mui/material";
-import { ButtonStyled } from "./../../components/CartProduct/styles";
 import styled from "styled-components";
 export const CardStyled = styled.div`
   box-shadow: 0px 0px 20px 0px #0000001a;

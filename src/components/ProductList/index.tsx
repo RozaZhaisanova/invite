@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
 import {
   CardStyled,
@@ -25,6 +25,13 @@ export const ProductList = () => {
   }, []);
   const wired = headphones.filter((product) => product.type === "wired");
   const wireless = headphones.filter((product) => product.type === "wireless");
+  if (isLoading) {
+    return (
+      <ContainerStyled>
+        <CatalogTitle> Loading</CatalogTitle>
+      </ContainerStyled>
+    );
+  }
   return (
     <ContainerStyled>
       {wired.length > 0 && (

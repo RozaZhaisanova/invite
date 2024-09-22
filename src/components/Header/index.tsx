@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Counter, HeaderEnd, HeaderStyled, Logo } from "./styles";
-import { Badge, Box } from "@mui/material";
 import { useSelector } from "react-redux";
 import { selectCartItems } from "../../store/slices/cartSlice";
 

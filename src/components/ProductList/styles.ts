@@ -1,12 +1,8 @@
-import { Card, Container } from "@mui/material";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 export const ProductGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(300px, 1fr)
-  ); // Автоматическое заполнение с минимальной шириной
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
 `;
 export const HeaderStyled = styled.header`

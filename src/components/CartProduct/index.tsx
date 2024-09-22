@@ -5,7 +5,7 @@ import {
 } from "../../store/slices/cartSlice";
 import { ICartProduct } from "../../lib/types";
 import { useDispatch } from "react-redux";
-import { Box, Button, CardContent } from "@mui/material";
+import { Box, CardContent } from "@mui/material";
 import {
   ButtonStyled,
   CartProductBox,

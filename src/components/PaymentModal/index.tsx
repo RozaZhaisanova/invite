@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Modal,
-  Box,
-  Typography,
-  Button,
-  Container,
-  TextField,
-} from "@mui/material";
+import { Modal, Box, Button, Container, TextField } from "@mui/material";
 import { PaymentModalProps } from "./interfaces";
 
 const style = {

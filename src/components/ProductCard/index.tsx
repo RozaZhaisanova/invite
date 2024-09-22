@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import { ImageProps, ProductCardProps } from "./interfaces";
+import { ProductCardProps } from "./interfaces";
 import { useDispatch } from "react-redux";
-import { CardMedia, CardActions, Typography } from "@mui/material";
-import Button from "@mui/material/Button";
-import StarIcon from "@mui/icons-material/Star";
 import Box, { BoxProps } from "@mui/material/Box";
 import { IconButton } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
@@ -20,11 +16,11 @@ import {
   ProductCardTitleAndPrice,
   ProductCardPriceBox,
   ProductCardFooter,
-  ProductCardInCartTitle
+  ProductCardInCartTitle,
 } from "./styles";
 import { useSelector } from "react-redux";
 import { selectCartItems } from "../../store/slices/cartSlice";
-import { increaseQuantity, addItem } from "../../store/slices/cartSlice";
+import { addItem } from "../../store/slices/cartSlice";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { DivStyled } from "./styles";
@@ -108,9 +104,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </ProductCardStar>
           {isCardInCart ? (
             <ProductCardBuy onClick={() => navigate("/cart")}>
-              <ProductCardInCartTitle>
-                {t("inCart")}
-              </ProductCardInCartTitle>
+              <ProductCardInCartTitle>{t("inCart")}</ProductCardInCartTitle>
             </ProductCardBuy>
           ) : (
             <ProductCardBuy onClick={handleAddToCart}>
