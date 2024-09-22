@@ -11,6 +11,8 @@ import {
   CartProductBox,
   CartProductContent,
   CartProductMiddle,
+  CartProductMiddlePrice,
+  CartProductQuantity,
   CartProductStart,
   CartProductTitle,
   Content,
@@ -33,51 +35,50 @@ function CartProduct({ title, img, price, quantity }: ICartProduct) {
     dispatch(decreaseQuantity(title));
   };
   return (
-    <div>
-      <CardContent>
-        <Content>
-          <CartProductContent>
-            <CartProductStart>
-              <ImgStyled src={img} alt={title} />
+    <CardContent>
+      <Content>
+        <CartProductContent>
+          <CartProductStart>
+            <ImgStyled src={img} alt={title} />
 
-              <Quantity>
-                <Item>
-                  <ButtonStyled onClick={handleDecreaseQuantity}>
-                    <img src="./assets/-.svg" alt="minus" />
-                  </ButtonStyled>
-                </Item>
-                <Item>
-                  <p>{quantity}</p>
-                </Item>
-                <Item>
-                  <ButtonStyled onClick={handleIncreaseQuantity}>
-                    <img src="./assets/+.svg" alt="plus" />
-                  </ButtonStyled>
-                </Item>
-              </Quantity>
-            </CartProductStart>
+            <Quantity>
+              <Item>
+                <ButtonStyled onClick={handleDecreaseQuantity}>
+                  <img src="./assets/-.svg" alt="minus" />
+                </ButtonStyled>
+              </Item>
+              <Item>
+                <CartProductQuantity>{quantity}</CartProductQuantity>
+              </Item>
+              <Item>
+                <ButtonStyled onClick={handleIncreaseQuantity}>
+                  <img src="./assets/+.svg" alt="plus" />
+                </ButtonStyled>
+              </Item>
+            </Quantity>
+          </CartProductStart>
 
-            <CartProductMiddle>
-              <CartProductTitle>{title}</CartProductTitle>
-            </CartProductMiddle>
-          </CartProductContent>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              flexDirection: "row",
-            }}
-          >
-            <CartProductBox>
-              <ButtonStyled onClick={handleRemoveCard}>
-                <img src="./assets/del.svg" alt="del" />
-              </ButtonStyled>
-              <Price>{price} ₽</Price>
-            </CartProductBox>
-          </Box>
-        </Content>
-      </CardContent>
-    </div>
+          <CartProductMiddle>
+            <CartProductTitle>{title}</CartProductTitle>
+            <CartProductMiddlePrice>{price} ₽</CartProductMiddlePrice>
+          </CartProductMiddle>
+        </CartProductContent>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexDirection: "row",
+          }}
+        >
+          <CartProductBox>
+            <ButtonStyled onClick={handleRemoveCard}>
+              <img src="./assets/del.svg" alt="del" />
+            </ButtonStyled>
+            <Price>{price} ₽</Price>
+          </CartProductBox>
+        </Box>
+      </Content>
+    </CardContent>
   );
 }
 

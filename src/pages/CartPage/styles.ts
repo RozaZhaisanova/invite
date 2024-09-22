@@ -42,3 +42,17 @@ export const CartTotal = styled.span`
   line-height: 18.29px;
   text-align: left;
 `;
+export const PaymentButtonTitle = styled.span`
+  font-family: Montserrat;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20.72px;
+  text-align: center;
+`;
+export const CartTitle = styled.h2`
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.38px;
+  text-align: left;
+`;
