@@ -40,7 +40,6 @@ function CartPage() {
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           {cartItems.length === 0 ? (
             <button onClick={() => navigate("/")}>
-              {" "}
               <CartTotal> {t("backToCatalog")}</CartTotal>
             </button>
           ) : (

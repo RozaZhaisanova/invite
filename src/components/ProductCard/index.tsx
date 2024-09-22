@@ -9,8 +9,17 @@ import Box, { BoxProps } from "@mui/material/Box";
 import { IconButton } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
 import ProductModal from "../ProductModal";
-import { TypographyOldPrice } from "./styles";
+import {
+  ProductCardBuyTitle,
+  ProductCardOldPrice,
+  ProductCardPrice,
+  ProductCardBuy,
+  ProductCardTitle,
+  ProductRate,
+} from "./styles";
 import { addItem } from "../../store/slices/cartSlice";
+import { useTranslation } from "react-i18next";
+
 import { DivStyled } from "./styles";
 export function Item(props: BoxProps) {
   const { sx, ...other } = props;
@@ -33,6 +42,7 @@ export function Item(props: BoxProps) {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -71,11 +81,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           }}
         >
           <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <Typography variant="h6">
+            <ProductCardTitle>
               {product.title.length > 25
                 ? `${product.title.slice(0, 25)}...`
                 : product.title}
-            </Typography>
+            </ProductCardTitle>
           </Box>
 
           <Box
@@ -94,22 +104,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 flexDirection: "column",
               }}
             >
-              <Typography
-                variant="h6"
-                style={{
-                  color: "#DAA520",
-                  marginRight: "0.4rem",
-                }}
-              >
-                {product.price}₽
-              </Typography>
-              <TypographyOldPrice
-                variant="subtitle2"
-                className={` single-line`}
-                style={{ marginTop: "-0.3rem", color: "#DAA520" }}
-              >
+              <ProductCardPrice>{product.price}₽</ProductCardPrice>
+              <ProductCardOldPrice>
                 {product.oldPrice ? product.oldPrice + " ₽" : ""}
-              </TypographyOldPrice>
+              </ProductCardOldPrice>
             </Box>
           </Box>
         </Box>
@@ -119,20 +117,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             alignItems: "flex-start",
             display: "flex",
             flexDirection: "row",
-            marginTop: "0.4rem",
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Item>
-              <StarIcon style={{ color: "#DAA520" }} />
+              <img src="./assets/star.png" alt="Star" />
             </Item>
             <Item>
-              <Typography>&nbsp;{product.rate}</Typography>
+              <ProductRate>{product.rate}</ProductRate>
             </Item>
           </Box>
-          <Button variant="text" onClick={handleAddToCart}>
-            Купить
-          </Button>
+          <ProductCardBuy onClick={handleAddToCart}>
+            <ProductCardBuyTitle>{t("buy")}</ProductCardBuyTitle>
+          </ProductCardBuy>
         </Box>
       </DivStyled>
     </>

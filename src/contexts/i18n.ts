@@ -14,6 +14,7 @@ i18n
           total: "TOTAL",
           emptyCart: "Cart is empty",
           backToCatalog: "Back to Catalog",
+          buy: "Buy",
         },
       },
       ru: {
@@ -25,6 +26,7 @@ i18n
           total: "ИТОГО",
           emptyCart: "Корзина пуста",
           backToCatalog: "Вернуться в каталог",
+          buy: "Купить",
         },
       },
     },

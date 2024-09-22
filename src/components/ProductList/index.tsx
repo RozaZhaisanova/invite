@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../ProductCard";
-import { CardStyled, ContainerStyled, ProductGrid } from "./styles";
+import {
+  CardStyled,
+  CatalogTitle,
+  ContainerStyled,
+  ProductGrid,
+} from "./styles";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
 import { getHeadphones } from "../../lib/api";
 import { Product } from "../../lib/types";
 
@@ -24,40 +27,34 @@ export const ProductList = () => {
   const wireless = headphones.filter((product) => product.type === "wireless");
   return (
     <ContainerStyled>
-      <>
-        {wired.length > 0 && (
-          <>
-            <h2 className="titlePage"> Наушники</h2>
-            <div className="products__list wired__list">
-              <ProductGrid>
-                {wired.map((product) => (
-                  <CardStyled key={product.id}>
-                    <CardContent>
-                      <ProductCard product={product} />
-                    </CardContent>
-                  </CardStyled>
-                ))}
-              </ProductGrid>
-            </div>
-          </>
-        )}
-        {wireless.length > 0 && (
-          <>
-            <h2 className="titlePage">Беспроводные наушники</h2>
-            <div className="products__list wireless__list">
-              <ProductGrid>
-                {wireless.map((product) => (
-                  <CardStyled key={product.id}>
-                    <CardContent>
-                      <ProductCard product={product} />
-                    </CardContent>
-                  </CardStyled>
-                ))}
-              </ProductGrid>
-            </div>
-          </>
-        )}
-      </>
+      {wired.length > 0 && (
+        <>
+          <CatalogTitle> Наушники</CatalogTitle>
+          <ProductGrid>
+            {wired.map((product) => (
+              <CardStyled key={product.id}>
+                <CardContent>
+                  <ProductCard product={product} />
+                </CardContent>
+              </CardStyled>
+            ))}
+          </ProductGrid>
+        </>
+      )}
+      {wireless.length > 0 && (
+        <>
+          <CatalogTitle>Беспроводные наушники</CatalogTitle>
+          <ProductGrid>
+            {wireless.map((product) => (
+              <CardStyled key={product.id}>
+                <CardContent>
+                  <ProductCard product={product} />
+                </CardContent>
+              </CardStyled>
+            ))}
+          </ProductGrid>
+        </>
+      )}
     </ContainerStyled>
   );
 };

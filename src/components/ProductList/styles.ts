@@ -28,8 +28,6 @@ export const Logo = styled(Link)`
 export const ContainerStyled = styled.main`
   max-width: 1110px;
   min-height: calc(100vh - 149px - 88px);
-  top: 88px;
-  left: 182px;
   margin: 0 auto;
 `;
 export const CardStyled = styled.div`
@@ -42,4 +40,14 @@ export const CardStyled = styled.div`
   gap: 0px;
   border-radius: 30px;
   opacity: 0px;
+`;
+export const CatalogTitle = styled.h2`
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24.38px;
+  text-align: left;
+  color: #838383;
+  padding-bottom: 8px;
+  padding-top: 8px;
 `;
