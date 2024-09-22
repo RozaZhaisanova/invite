@@ -1,6 +1,4 @@
-import { Box } from "@mui/material";
 import styled from "styled-components";
-
 export const CartProductStyled = styled.div`
   box-shadow: 0px 0px 20px 0px #0000001a;
   background: #ffffff;
@@ -64,4 +62,13 @@ export const CartProductContent = styled.div`
   justify-content: center;
   align-items: center;
   column-gap: 23px;
+`;
+export const CartProductTitle = styled.span`
+  font-family: Montserrat;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 20.72px;
+  text-align: left;
+
+  color: #1c1c27;
 `;

@@ -12,6 +12,7 @@ import {
   CartProductContent,
   CartProductMiddle,
   CartProductStart,
+  CartProductTitle,
   Content,
   ImgStyled,
   Price,
@@ -57,7 +58,7 @@ function CartProduct({ title, img, price, quantity }: ICartProduct) {
             </CartProductStart>
 
             <CartProductMiddle>
-              <h3>{title}</h3>
+              <CartProductTitle>{title}</CartProductTitle>
             </CartProductMiddle>
           </CartProductContent>
           <Box
@@ -71,7 +72,7 @@ function CartProduct({ title, img, price, quantity }: ICartProduct) {
               <ButtonStyled onClick={handleRemoveCard}>
                 <img src="./assets/del.svg" alt="del" />
               </ButtonStyled>
-              <Price>{price}</Price>
+              <Price>{price} ₽</Price>
             </CartProductBox>
           </Box>
         </Content>
