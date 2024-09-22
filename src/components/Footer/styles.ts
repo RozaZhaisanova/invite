@@ -68,7 +68,13 @@ export const Lang = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `;
+export const SelectedButtonStyled = styled.button`
+  border: 0;
+  background: transparent;
+  color: #ffa542;
 
+  cursor: pointer;
+`;
 export const StyledList = styled.ul`
   list-style-type: none;
   padding: 0;

@@ -16,12 +16,14 @@ import {
   PhoneLink,
   Lang,
   ColumnRight,
+  SelectedButtonStyled,
 } from "./styles";
+import i18n from "../../contexts/i18n";
 
 const Footer = () => {
   const { t } = useTranslation();
   const { setLanguage } = useLanguage();
-
+  const selectedLanguage = i18n.language;
   return (
     <FooterContainer>
       <SiteName>
@@ -46,12 +48,31 @@ const Footer = () => {
           <StyledTypography>{t("termsOfService")}</StyledTypography>
           <Lang>
             <img src="./assets/globus.png" alt="Иконка глобуса" />
-            <ButtonStyled type="button" onClick={() => setLanguage("ru")}>
-              Рус
-            </ButtonStyled>
-            <ButtonStyled type="button" onClick={() => setLanguage("eng")}>
-              Eng
-            </ButtonStyled>
+            {selectedLanguage === "ru" ? (
+              <>
+                <SelectedButtonStyled
+                  type="button"
+                  onClick={() => setLanguage("ru")}
+                >
+                  Рус
+                </SelectedButtonStyled>
+                <ButtonStyled type="button" onClick={() => setLanguage("eng")}>
+                  Eng
+                </ButtonStyled>
+              </>
+            ) : (
+              <>
+                <ButtonStyled type="button" onClick={() => setLanguage("ru")}>
+                  Рус
+                </ButtonStyled>
+                <SelectedButtonStyled
+                  type="button"
+                  onClick={() => setLanguage("en")}
+                >
+                  Eng
+                </SelectedButtonStyled>
+              </>
+            )}
           </Lang>
         </ColumnRight>
       </FooterContent>
