@@ -30,13 +30,10 @@ export const HeaderEnd = styled.div`
   flex-direction: row;
 `;
 export const Counter = styled(Badge)`
-  top: 15%;
-  right: 15%;
-  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 18px;
-  height: 18px;
+  width: 25px;
+  height: 25px;
   border-radius: inherit;
 `;
