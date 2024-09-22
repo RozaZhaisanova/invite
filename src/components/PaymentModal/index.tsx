@@ -36,9 +36,15 @@ const PaymentModal: React.FC<PaymentModalProps> = ({ open, handleClose }) => {
             </Button>
           </form>
         </Container>
-        <Button onClick={handleClose} variant="outlined">
-          Закрыть
-        </Button>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "end",
+            flexDirection: "row",
+          }}
+        >
+          <Button onClick={handleClose}>Закрыть</Button>
+        </Box>
       </Box>
     </Modal>
   );
