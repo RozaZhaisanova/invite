@@ -5,7 +5,7 @@ import { selectCartItems } from "../../store/slices/cartSlice";
 
 export const Header = () => {
   const cartItems = useSelector(selectCartItems);
-
+  const total = cartItems.reduce((sum, item) => sum + item.quantity, 0);
   return (
     <HeaderStyled>
       <Logo to="/">QPICK</Logo>
@@ -17,10 +17,7 @@ export const Header = () => {
         </Link>
 
         <Link to="/cart">
-          <Counter
-            badgeContent={Object.keys(cartItems).length}
-            color="secondary"
-          >
+          <Counter badgeContent={total} color="secondary">
             <img src="./assets/Vector.svg" alt="Корзина" />
           </Counter>
         </Link>

@@ -18,10 +18,8 @@ const cartSlice = createSlice({
       const { title } = action.payload;
       const existingItem = state.items.find((item) => item.title === title);
       if (existingItem) {
-        // Увеличиваем счетчик товара
         existingItem.quantity++;
       } else {
-        // Добавляем новый товар
         state.items.push({ ...action.payload, quantity: 1 });
       }
     },
