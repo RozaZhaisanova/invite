@@ -11,6 +11,10 @@ export const HeaderStyled = styled.header`
   margin: 0 auto;
   overflow-x: hidden;
   padding: 20px;
+  @media (max-width: 768px) {
+    width: 100%;
+    overflow: hidden;
+  }
 `;
 
 export const Logo = styled(Link)`
@@ -24,6 +28,10 @@ export const Logo = styled(Link)`
   &:hover {
     opacity: 0.7;
   }
+  @media (max-width: 768px) {
+    font-size: 20px;
+    line-height: 25px;
+  }
 `;
 export const HeaderEnd = styled.div`
   width: 94.4px;
@@ -31,6 +39,8 @@ export const HeaderEnd = styled.div`
   align-items: center;
   display: flex;
   flex-direction: row;
+  @media (max-width: 768px) {
+  }
 `;
 export const Counter = styled(Badge)`
   display: flex;
@@ -41,5 +51,14 @@ export const Counter = styled(Badge)`
   border-radius: inherit;
   &:hover {
     opacity: 0.7;
+  }
+  @media (max-width: 768px) {
+    width: 22px;
+    height: 22px;
+
+    img {
+      width: 75px;
+      height: auto;
+    }
   }
 `;

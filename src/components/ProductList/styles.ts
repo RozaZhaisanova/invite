@@ -4,6 +4,18 @@ export const ProductGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
+
+      @media (min-width: 640px) and (max-width: 1160px) {
+ 
+      grid-template-columns: repeat(2, 1fr);
+    
+  }
+
+  @media (min-width: 320px) and (max-width: 639px) {
+   
+      grid-template-columns: minmax(290px, 320px);
+
+   
 `;
 export const HeaderStyled = styled.header`
   display: flex;

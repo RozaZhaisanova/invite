@@ -13,6 +13,10 @@ export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    width: 100%;
+    overflow: hidden;
+  }
 `;
 
 export const SocialLink = styled.a`
