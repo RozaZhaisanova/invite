@@ -14,13 +14,10 @@ import {
   SocialIcons,
   SocialLink,
   PhoneLink,
-  Lang,
   ColumnRight,
   SelectedButtonStyled,
-  FooterMobContent,
   MobSocialIcons,
   LangSelector,
-  LanguageButton,
   MobFooterContainer,
   MobFooterContent,
   MobPhoneLink,
@@ -64,7 +61,7 @@ const Footer = () => {
             </Column>
             <ColumnRight>
               <StyledTypography>{t("termsOfService")}</StyledTypography>
-              <Lang>
+              <LangSelector>
                 <img src="./assets/globus.png" alt="Иконка глобуса" />
                 {selectedLanguage === "ru" ? (
                   <>
@@ -97,7 +94,7 @@ const Footer = () => {
                     </SelectedButtonStyled>
                   </>
                 )}
-              </Lang>
+              </LangSelector>
             </ColumnRight>
           </FooterContent>
           <SocialIcons>
@@ -146,12 +143,31 @@ const Footer = () => {
 
           <LangSelector>
             <img src="./assets/globus.png" alt="Иконка глобуса" />
-            <LanguageButton onClick={() => setLanguage("ru")}>
-              Рус
-            </LanguageButton>
-            <LanguageButton onClick={() => setLanguage("eng")}>
-              Eng
-            </LanguageButton>
+            {selectedLanguage === "ru" ? (
+              <>
+                <SelectedButtonStyled
+                  type="button"
+                  onClick={() => setLanguage("ru")}
+                >
+                  Рус
+                </SelectedButtonStyled>
+                <ButtonStyled type="button" onClick={() => setLanguage("eng")}>
+                  Eng
+                </ButtonStyled>
+              </>
+            ) : (
+              <>
+                <ButtonStyled type="button" onClick={() => setLanguage("ru")}>
+                  Рус
+                </ButtonStyled>
+                <SelectedButtonStyled
+                  type="button"
+                  onClick={() => setLanguage("en")}
+                >
+                  Eng
+                </SelectedButtonStyled>
+              </>
+            )}
           </LangSelector>
 
           <MobFooterContent>
@@ -166,14 +182,16 @@ const Footer = () => {
                 <MobStyledListItem>
                   <FooterLink to="/contacts">{t("contacts")}</FooterLink>
                 </MobStyledListItem>
+                <br />
+                <FooterLink to="/termsOfService">
+                  {t("termsOfService")}
+                </FooterLink>
               </MobStyledList>
             </Column>
             <SiteName>
               <Logo to="/">QPICK</Logo>
             </SiteName>
           </MobFooterContent>
-
-          <StyledTypography>{t("termsOfService")}</StyledTypography>
         </MobFooterContainer>
       )}
     </>

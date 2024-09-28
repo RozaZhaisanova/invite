@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 export const MobFooterContainer = styled.footer`
   padding: 20px;
-  background-color: #282c34;
+  background-color: #a0a0a0;
   color: white;
   text-align: center;
 `;
@@ -29,25 +29,6 @@ export const MobPhoneLink = styled.a`
     width: 24px;
     height: 24px;
   }
-`;
-
-export const LangSelector = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-
-  img {
-    margin-right: 5px;
-  }
-`;
-
-export const LanguageButton = styled.button`
-  background: "#61dafb";
-  color: "#282c34";
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
 `;
 
 export const MobFooterContent = styled.div`
@@ -138,12 +119,6 @@ export const FooterContent = styled.div`
     overflow: hidden;
   }
 `;
-export const FooterMobContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 10px;
-  justify-content: flex-start;
-`;
 export const ColumnRight = styled.div`
   margin-bottom: 17px;
 `;
@@ -170,7 +145,7 @@ export const SocialIcons = styled.div`
     padding-right: 15px;
   }
 `;
-export const Lang = styled.div`
+export const LangSelector = styled.div`
   width: 111px;
   height: 20px;
   margin-top: 40px;
@@ -179,6 +154,8 @@ export const Lang = styled.div`
   justify-content: space-between;
   @media (max-width: 600px) {
     margin-top: 15px;
+    width: 100%;
+    justify-content: center;
   }
 `;
 export const SelectedButtonStyled = styled.button`
