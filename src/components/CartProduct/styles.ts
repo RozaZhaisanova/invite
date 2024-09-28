@@ -6,6 +6,9 @@ export const CartProductStyled = styled.div`
   border-radius: 30px;
   width: 633px;
   height: 218px;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 export const ImgStyled = styled.img`

@@ -8,6 +8,7 @@ import PaymentModal from "../../components/PaymentModal";
 import { ContainerStyled } from "../../components/ProductList/styles";
 import { CartProductStyled } from "../../components/CartProduct/styles";
 import {
+  CartPageWrapper,
   CartTitle,
   CartTotal,
   PaymentButtonStyled,
@@ -29,14 +30,7 @@ function CartPage() {
   return (
     <ContainerStyled>
       <CartTitle>{t("cart")}</CartTitle>
-      <Box
-        sx={{
-          justifyContent: "space-between",
-          alignItems: "flex-start",
-          display: "flex",
-          flexDirection: "row",
-        }}
-      >
+      <CartPageWrapper>
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           {cartItems.length === 0 ? (
             <button onClick={() => navigate("/")}>
@@ -44,9 +38,8 @@ function CartPage() {
             </button>
           ) : (
             cartItems.map((item) => (
-              <CartProductStyled>
+              <CartProductStyled key={item.title}>
                 <CartProduct
-                  key={item.title}
                   title={item.title}
                   img={item.img}
                   price={item.price}
@@ -110,7 +103,7 @@ function CartPage() {
             )}
           </div>
         </Box>
-      </Box>
+      </CartPageWrapper>
 
       <PaymentModal open={open} handleClose={handleClose} />
     </ContainerStyled>

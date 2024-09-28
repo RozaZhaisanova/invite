@@ -1,4 +1,18 @@
 import styled from "styled-components";
+
+export const CartPageWrapper = styled.div`
+  justify-content: space-between;
+
+  flex-direction: row;
+  display: flex;
+
+  align-items: flex-start;
+  @media (max-width: 600px) {
+    justify-content: center;
+    flex-direction: column;
+  }
+`;
+
 export const CardStyled = styled.div`
   box-shadow: 0px 0px 20px 0px #0000001a;
   background: #ffffff;
