@@ -7,10 +7,11 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  maxWidth: 400,
   bgcolor: "background.paper",
   boxShadow: 24,
-  p: 4,
+  p: { xs: 1, sm: 3, md: 4 },
+  width: "90%",
 };
 
 const ProductModal: React.FC<ProductModalProps> = ({

@@ -7,9 +7,10 @@ export const CartPageWrapper = styled.div`
   display: flex;
 
   align-items: flex-start;
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     justify-content: center;
     flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -71,4 +72,7 @@ export const CartTitle = styled.h2`
   font-weight: 600;
   line-height: 24.38px;
   text-align: left;
+  @media (max-width: 1000px) {
+    text-align: center;
+  }
 `;

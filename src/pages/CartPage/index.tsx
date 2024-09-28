@@ -31,7 +31,7 @@ function CartPage() {
     <ContainerStyled>
       <CartTitle>{t("cart")}</CartTitle>
       <CartPageWrapper>
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Box>
           {cartItems.length === 0 ? (
             <button onClick={() => navigate("/")}>
               <CartTotal> {t("backToCatalog")}</CartTotal>
