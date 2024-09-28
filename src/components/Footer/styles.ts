@@ -1,6 +1,95 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+export const MobFooterContainer = styled.footer`
+  padding: 20px;
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+`;
 
+export const MobSocialIcons = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  & a {
+    margin: 0 10px;
+  }
+`;
+
+export const MobSocialLink = styled.a`
+  img {
+    width: 24px;
+    height: 24px;
+  }
+`;
+
+export const MobPhoneLink = styled.a`
+  img {
+    width: 24px;
+    height: 24px;
+  }
+`;
+
+export const LangSelector = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  img {
+    margin-right: 5px;
+  }
+`;
+
+export const LanguageButton = styled.button`
+  background: "#61dafb";
+  color: "#282c34";
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+`;
+
+export const MobFooterContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const Column = styled.div`
+  margin-bottom: 10px;
+`;
+
+export const MobStyledList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;
+
+export const MobStyledListItem = styled.li`
+  margin: 5px 0;
+`;
+
+export const MobFooterLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const MobSiteName = styled.div`
+  margin-top: 10px;
+`;
+
+export const MobLogo = styled(Link)`
+  font-size: 24px;
+  color: white;
+`;
+
+export const MobStyledTypography = styled.p`
+  font-size: 12px;
+`;
 export const FooterContainer = styled.footer`
   box-shadow: 0px 0px 20px 0px #0000001a;
   width: 1110px;
@@ -55,7 +144,6 @@ export const FooterMobContent = styled.div`
   padding-bottom: 10px;
   justify-content: flex-start;
 `;
-export const Column = styled.div``;
 export const ColumnRight = styled.div`
   margin-bottom: 17px;
 `;

@@ -18,6 +18,15 @@ import {
   ColumnRight,
   SelectedButtonStyled,
   FooterMobContent,
+  MobSocialIcons,
+  LangSelector,
+  LanguageButton,
+  MobFooterContainer,
+  MobFooterContent,
+  MobPhoneLink,
+  MobSocialLink,
+  MobStyledList,
+  MobStyledListItem,
 } from "./styles";
 import i18n from "../../contexts/i18n";
 import { useTheme } from "@mui/material/styles";
@@ -29,6 +38,7 @@ const Footer = () => {
   const { setLanguage } = useLanguage();
   const selectedLanguage = i18n.language;
   const theme = useTheme();
+
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
@@ -111,90 +121,60 @@ const Footer = () => {
           </SocialIcons>
         </FooterContainer>
       ) : (
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <FooterMobContent>
+        <MobFooterContainer>
+          <MobSocialIcons>
+            <MobSocialLink
+              href="https://vk.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="VK"
+            >
+              <img src="./assets/VK.svg" alt="VK" />
+            </MobSocialLink>
+            <MobSocialLink
+              href="https://t.me/fonelor"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+            >
+              <img src="./assets/Telegram.svg" alt="Telegram" />
+            </MobSocialLink>
+            <MobPhoneLink href="tel:+79805304119" aria-label="WhatsApp">
+              <img src="./assets/Whatsapp.svg" alt="WhatsApp" />
+            </MobPhoneLink>
+          </MobSocialIcons>
+
+          <LangSelector>
+            <img src="./assets/globus.png" alt="Иконка глобуса" />
+            <LanguageButton onClick={() => setLanguage("ru")}>
+              Рус
+            </LanguageButton>
+            <LanguageButton onClick={() => setLanguage("eng")}>
+              Eng
+            </LanguageButton>
+          </LangSelector>
+
+          <MobFooterContent>
+            <Column>
+              <MobStyledList>
+                <MobStyledListItem>
+                  <FooterLink to="/favourites">{t("favourites")}</FooterLink>
+                </MobStyledListItem>
+                <MobStyledListItem>
+                  <FooterLink to="/cart">{t("cart")}</FooterLink>
+                </MobStyledListItem>
+                <MobStyledListItem>
+                  <FooterLink to="/contacts">{t("contacts")}</FooterLink>
+                </MobStyledListItem>
+              </MobStyledList>
+            </Column>
             <SiteName>
               <Logo to="/">QPICK</Logo>
             </SiteName>
-            <SocialIcons>
-              <SocialLink
-                href="https://vk.com/sqrtx"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src="./assets/VK.svg" alt="VK" />
-              </SocialLink>
-              <SocialLink
-                href="https://t.me/fonelor"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src="./assets/Telegram.svg" alt="Telegram" />
-              </SocialLink>
-              <PhoneLink href="tel:+79805304119">
-                <img src="./assets/Whatsapp.svg" alt="Whatsapp" />
-              </PhoneLink>
-            </SocialIcons>
-            <Lang>
-              <img src="./assets/globus.png" alt="Иконка глобуса" />
-              {selectedLanguage === "ru" ? (
-                <>
-                  <SelectedButtonStyled
-                    type="button"
-                    onClick={() => setLanguage("ru")}
-                  >
-                    Рус
-                  </SelectedButtonStyled>
-                  <ButtonStyled
-                    type="button"
-                    onClick={() => setLanguage("eng")}
-                  >
-                    Eng
-                  </ButtonStyled>
-                </>
-              ) : (
-                <>
-                  <ButtonStyled type="button" onClick={() => setLanguage("ru")}>
-                    Рус
-                  </ButtonStyled>
-                  <SelectedButtonStyled
-                    type="button"
-                    onClick={() => setLanguage("en")}
-                  >
-                    Eng
-                  </SelectedButtonStyled>
-                  <SiteName>
-                    <Logo to="/">QPICK</Logo>
-                  </SiteName>
-                </>
-              )}
-            </Lang>
-          </FooterMobContent>
-          <FooterContent>
-            <Column>
-              <StyledList>
-                <StyledListItem>
-                  <FooterLink to="/favourites">{t("favourites")}</FooterLink>
-                </StyledListItem>
-                <StyledListItem>
-                  <FooterLink to="/cart">{t("cart")}</FooterLink>
-                </StyledListItem>
-                <StyledListItem>
-                  <FooterLink to="/contacts">{t("contacts")}</FooterLink>
-                </StyledListItem>
-              </StyledList>
-            </Column>
-            <ColumnRight>
-              <StyledTypography>{t("termsOfService")}</StyledTypography>
-            </ColumnRight>
-          </FooterContent>
-        </Box>
+          </MobFooterContent>
+
+          <StyledTypography>{t("termsOfService")}</StyledTypography>
+        </MobFooterContainer>
       )}
     </>
   );
