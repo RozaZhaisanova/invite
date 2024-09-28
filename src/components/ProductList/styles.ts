@@ -37,7 +37,7 @@ export const Logo = styled(Link)`
 `;
 export const ContainerStyled = styled.main`
   max-width: 1110px;
-  min-height: calc(100vh - 149px - 88px);
+
   margin: 0 auto;
 `;
 export const CardStyled = styled.div`

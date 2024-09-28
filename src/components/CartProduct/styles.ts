@@ -11,11 +11,13 @@ export const CartProductStyled = styled.div`
 export const ImgStyled = styled.img`
   max-width: 146.53px;
   max-height: 136px;
-  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 `;
 export const ImgBox = styled.div`
   width: 146.53px;
   height: 136px;
+  display: flex;
 `;
 export const Quantity = styled.div`
   width: 118.21px;
