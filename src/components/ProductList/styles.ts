@@ -5,19 +5,20 @@ export const ProductGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
 
-      @media (min-width: 640px) and (max-width: 1160px) {
-   width: 100%;
-    height: 100%; justify-content: center;
-      grid-template-columns: repeat(2, 1fr);
-    
+  @media (min-width: 640px) and (max-width: 1160px) {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   @media (min-width: 320px) and (max-width: 639px) {
-     width: 100%;
-    height: 100%; justify-content: center;
-      grid-template-columns: minmax(290px, 320px);
-
-   
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    grid-template-columns: minmax(290px, 320px);
+  }
 `;
 export const HeaderStyled = styled.header`
   display: flex;
@@ -50,6 +51,12 @@ export const CardStyled = styled.div`
   gap: 0px;
   border-radius: 30px;
   opacity: 0px;
+  @media (min-width: 640px) and (max-width: 1160px) {
+    width: 350px;
+    height: 300px;
+    justify-content: center;
+    grid-template-columns: minmax(290px, 320px);
+  }
 `;
 export const CatalogTitle = styled.h2`
   font-family: Montserrat;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
   box-shadow: 0px 0px 20px 0px #0000001a;
-  width: 1110px;
+  max-width: 1110px;
   height: 149px;
   border-radius: 30px 30px 0px 0px;
   background: #ffffff;
