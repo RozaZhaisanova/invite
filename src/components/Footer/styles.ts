@@ -14,7 +14,7 @@ export const FooterContainer = styled.footer`
   flex-direction: row;
   justify-content: space-between;
   @media (max-width: 768px) {
-    width: 100%;
+    max-width: 100%;
     overflow: hidden;
   }
 `;

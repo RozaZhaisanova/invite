@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
-  width: 1109.89px;
+  max-width: 1109.89px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -12,7 +12,7 @@ export const HeaderStyled = styled.header`
   overflow-x: hidden;
   padding: 20px;
   @media (max-width: 768px) {
-    width: 100%;
+    max-width: 100%;
     overflow: hidden;
   }
 `;

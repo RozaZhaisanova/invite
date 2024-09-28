@@ -6,13 +6,15 @@ export const ProductGrid = styled.div`
   gap: 30px;
 
       @media (min-width: 640px) and (max-width: 1160px) {
- 
+   width: 100%;
+    height: 100%; justify-content: center;
       grid-template-columns: repeat(2, 1fr);
     
   }
 
   @media (min-width: 320px) and (max-width: 639px) {
-   
+     width: 100%;
+    height: 100%; justify-content: center;
       grid-template-columns: minmax(290px, 320px);
 
    
@@ -58,4 +60,12 @@ export const CatalogTitle = styled.h2`
   color: #838383;
   padding-bottom: 8px;
   padding-top: 8px;
+
+  @media (min-width: 640px) and (max-width: 1160px) {
+    text-align: center;
+  }
+
+  @media (min-width: 320px) and (max-width: 639px) {
+    text-align: center;
+  }
 `;
