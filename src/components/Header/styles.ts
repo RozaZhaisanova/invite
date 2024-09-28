@@ -29,8 +29,8 @@ export const Logo = styled(Link)`
     opacity: 0.7;
   }
   @media (max-width: 768px) {
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 25px;
+    line-height: 30px;
   }
 `;
 export const HeaderEnd = styled.div`

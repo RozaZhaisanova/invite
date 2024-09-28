@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 export const ProductGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  width: 100%;
+  height: auto;
+  grid-template-columns: repeat(3, 350px);
   gap: 30px;
-
-  @media (min-width: 640px) and (max-width: 1160px) {
-    width: 100%;
-    height: 100%;
-    justify-content: center;
+  justify-content: center;
+  justify-items: center;
+  @media (min-width: 640px) and (max-width: 1110px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
@@ -16,7 +16,6 @@ export const ProductGrid = styled.div`
   @media (min-width: 320px) and (max-width: 639px) {
     width: 100%;
     height: 100%;
-    justify-content: center;
     grid-template-columns: minmax(290px, 320px);
   }
 `;
@@ -46,16 +45,12 @@ export const CardStyled = styled.div`
   background: #ffffff;
   width: 350px;
   height: 406.81px;
-  top: 1053.19px;
-  left: 562px;
-  gap: 0px;
   border-radius: 30px;
-  opacity: 0px;
+
   @media (min-width: 640px) and (max-width: 1160px) {
-    width: 350px;
-    height: 300px;
-    justify-content: center;
-    grid-template-columns: minmax(290px, 320px);
+    grid-template-columns: repeat(2, minmax(290px, 320px));
+    grid-auto-rows: 370px;
+    gap: 20px;
   }
 `;
 export const CatalogTitle = styled.h2`

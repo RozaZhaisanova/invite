@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
   box-shadow: 0px 0px 20px 0px #0000001a;
-  max-width: 1110px;
+  width: 1110px;
   height: 149px;
   border-radius: 30px 30px 0px 0px;
   background: #ffffff;
@@ -13,7 +13,7 @@ export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  @media (max-width: 768px) {
+  @media (max-width: 1160px) {
     max-width: 100%;
     overflow: hidden;
   }
@@ -36,14 +36,25 @@ export const PhoneLink = styled.a`
   }
 `;
 export const FooterContent = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 427px;
-  height: 100%;
+  @media (min-width: 579px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 427px;
+    height: 100%;
+  }
+  @media (max-width: 860px) {
+    max-width: 300px;
+    overflow: hidden;
+  }
 `;
-
+export const FooterMobContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  justify-content: flex-start;
+`;
 export const Column = styled.div``;
 export const ColumnRight = styled.div`
   margin-bottom: 17px;
@@ -51,6 +62,11 @@ export const ColumnRight = styled.div`
 export const SiteName = styled.div`
   padding-left: 29px;
   padding-top: 29px;
+  @media (max-width: 599px) {
+    padding-top: 0px;
+
+    padding-left: 0px;
+  }
 `;
 export const SocialIcons = styled.div`
   width: 126.1px;
@@ -60,17 +76,22 @@ export const SocialIcons = styled.div`
   align-items: center;
   justify-content: space-between;
   padding-right: 29px;
+  @media (max-width: 460px) {
+    padding-top: 15px;
+
+    padding-right: 15px;
+  }
 `;
 export const Lang = styled.div`
   width: 111px;
   height: 20px;
-  top: 1570px;
-  left: 802px;
-  gap: 0px;
   margin-top: 40px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media (max-width: 600px) {
+    margin-top: 15px;
+  }
 `;
 export const SelectedButtonStyled = styled.button`
   border: 0;
