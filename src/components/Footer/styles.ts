@@ -152,6 +152,7 @@ export const LangSelector = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   @media (max-width: 600px) {
     margin-top: 15px;
     width: 100%;
@@ -164,6 +165,12 @@ export const SelectedButtonStyled = styled.button`
   color: #ffa542;
 
   cursor: pointer;
+`;
+export const LanguageTitle = styled.h3`
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 18.29px;
 `;
 export const StyledList = styled.ul`
   list-style-type: none;

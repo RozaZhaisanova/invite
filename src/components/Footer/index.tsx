@@ -24,6 +24,7 @@ import {
   MobSocialLink,
   MobStyledList,
   MobStyledListItem,
+  LanguageTitle,
 } from "./styles";
 import i18n from "../../contexts/i18n";
 import { useTheme } from "@mui/material/styles";
@@ -69,13 +70,13 @@ const Footer = () => {
                       type="button"
                       onClick={() => setLanguage("ru")}
                     >
-                      Рус
+                      <LanguageTitle>Рус</LanguageTitle>
                     </SelectedButtonStyled>
                     <ButtonStyled
                       type="button"
                       onClick={() => setLanguage("eng")}
                     >
-                      Eng
+                      <LanguageTitle>Eng</LanguageTitle>
                     </ButtonStyled>
                   </>
                 ) : (
@@ -84,13 +85,13 @@ const Footer = () => {
                       type="button"
                       onClick={() => setLanguage("ru")}
                     >
-                      Рус
+                      <LanguageTitle>Рус</LanguageTitle>
                     </ButtonStyled>
                     <SelectedButtonStyled
                       type="button"
                       onClick={() => setLanguage("en")}
                     >
-                      Eng
+                      <LanguageTitle>Eng</LanguageTitle>
                     </SelectedButtonStyled>
                   </>
                 )}
@@ -149,22 +150,22 @@ const Footer = () => {
                   type="button"
                   onClick={() => setLanguage("ru")}
                 >
-                  Рус
+                  <LanguageTitle>Рус</LanguageTitle>
                 </SelectedButtonStyled>
                 <ButtonStyled type="button" onClick={() => setLanguage("eng")}>
-                  Eng
+                  <LanguageTitle>Eng</LanguageTitle>
                 </ButtonStyled>
               </>
             ) : (
               <>
                 <ButtonStyled type="button" onClick={() => setLanguage("ru")}>
-                  Рус
+                  <LanguageTitle>Рус</LanguageTitle>
                 </ButtonStyled>
                 <SelectedButtonStyled
                   type="button"
                   onClick={() => setLanguage("en")}
                 >
-                  Eng
+                  <LanguageTitle>Eng</LanguageTitle>
                 </SelectedButtonStyled>
               </>
             )}
