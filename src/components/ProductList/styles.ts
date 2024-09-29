@@ -41,8 +41,13 @@ export const Logo = styled(Link)`
 `;
 export const ContainerStyled = styled.main`
   max-width: 1110px;
-
+  @media (min-width: 1001px) and (max-width: 1200px) {
+    max-width: 1000px;
+  }
   margin: 0 auto;
+  @media (min-width: 1000px) and (max-width: 1100px) {
+    max-width: 960px;
+  }
 `;
 export const CardStyled = styled.div`
   box-shadow: 0px 0px 20px 0px #0000001a;
