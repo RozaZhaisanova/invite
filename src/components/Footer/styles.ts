@@ -148,7 +148,7 @@ export const SocialIcons = styled.div`
 export const LangSelector = styled.div`
   width: 111px;
   height: 20px;
-  margin-top: 40px;
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

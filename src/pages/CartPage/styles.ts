@@ -19,11 +19,7 @@ export const CardStyled = styled.div`
   background: #ffffff;
   width: 350px;
   height: 406.81px;
-  top: 1053.19px;
-  left: 562px;
-  gap: 0px;
   border-radius: 30px;
-  opacity: 1;
 `;
 export const ColumnStyled = styled.div`
   display: flex;
@@ -44,7 +40,6 @@ export const PaymentButtonStyled = styled.button`
   width: 348.98px;
   height: 65px;
   border-radius: 20px;
-  opacity: 0px;
   color: #ffffff;
   &:hover {
     opacity: 0.7;

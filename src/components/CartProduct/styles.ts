@@ -10,6 +10,10 @@ export const CartProductStyled = styled.div`
     width: 100%;
     height: 180px;
   }
+  @media (min-width: 1001px) and (max-width: 1160px) {
+    width: 55vw;
+    height: 190px;
+  }
 `;
 
 export const ImgStyled = styled.img`
@@ -17,14 +21,14 @@ export const ImgStyled = styled.img`
   max-height: 136px;
   display: block;
   margin: 0 auto;
-  @media (max-width: 1000px) {
+  @media (max-width: 1160px) {
     max-width: 120px;
     max-height: 110px;
   }
 `;
 export const ImgBox = styled.div`
   width: 146.53px;
-  @media (max-width: 1000px) {
+  @media (max-width: 1160px) {
     width: 120px;
   }
 `;
@@ -74,7 +78,7 @@ export const CartProductBox = styled.div`
   justify-content: space-between;
   align-items: end;
   width: 100.81px;
-  @media (max-width: 1000px) {
+  @media (max-width: 1160px) {
     width: 65px;
     height: 160px;
   }
