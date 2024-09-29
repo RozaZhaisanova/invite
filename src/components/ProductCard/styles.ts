@@ -25,17 +25,15 @@ export const TypographyOldPrice = styled(Typography)`
   text-align: center;
 `;
 export const DivStyled = styled.div`
-  width: 310.04px;
+  width: 314px;
   height: 74px;
-  top: 438.35px;
-  left: 203.96px;
-  gap: 0px;
-  opacity: 0px;
   display: flex;
   flex-direction: column;
   row-gap: 15px;
+
   @media (max-width: 1200px) {
     width: 290px;
+    margin-top: 6px;
   }
 `;
 export const ProductCardTitleAndPrice = styled.div`
