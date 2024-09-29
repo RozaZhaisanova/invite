@@ -24,7 +24,6 @@ export const ImgStyled = styled.img`
 `;
 export const ImgBox = styled.div`
   width: 146.53px;
-  height: auto;
   @media (max-width: 1000px) {
     width: 120px;
   }
@@ -76,7 +75,7 @@ export const CartProductBox = styled.div`
   align-items: end;
   width: 100.81px;
   @media (max-width: 1000px) {
-    width: 60px;
+    width: 65px;
     height: 160px;
   }
 `;

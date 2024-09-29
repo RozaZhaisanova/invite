@@ -65,20 +65,12 @@ function CartProduct({ title, img, price, quantity }: ICartProduct) {
             <CartProductMiddlePrice>{price} ₽</CartProductMiddlePrice>
           </CartProductMiddle>
         </CartProductContent>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            flexDirection: "row",
-          }}
-        >
-          <CartProductBox>
-            <ButtonStyled onClick={handleRemoveCard}>
-              <img src="./assets/del.svg" alt="del" />
-            </ButtonStyled>
-            <Price>{price} ₽</Price>
-          </CartProductBox>
-        </Box>
+        <CartProductBox>
+          <ButtonStyled onClick={handleRemoveCard}>
+            <img src="./assets/del.svg" alt="del" />
+          </ButtonStyled>
+          <Price>{price} ₽</Price>
+        </CartProductBox>
       </Content>
     </CardContent>
   );

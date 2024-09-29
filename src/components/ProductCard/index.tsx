@@ -78,7 +78,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "237.07px",
+          height: { xs: "210px", lg: "237.07px" },
         }}
       >
         <img src={product.img} alt={product.title} />
