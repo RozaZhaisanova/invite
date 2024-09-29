@@ -46,7 +46,6 @@ export const CardStyled = styled.div`
   width: 350px;
   height: 406.81px;
   border-radius: 30px;
-
   @media (min-width: 640px) and (max-width: 1160px) {
     grid-template-columns: repeat(2, minmax(290px, 320px));
     grid-auto-rows: 370px;
