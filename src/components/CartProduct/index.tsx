@@ -25,7 +25,7 @@ import { Item } from "../ProductCard";
 
 function CartProduct({ title, img, price, quantity }: ICartProduct) {
   const dispatch = useDispatch();
-
+  const total = price * quantity;
   const handleRemoveCard = () => {
     dispatch(removeItem(title));
   };
@@ -69,7 +69,7 @@ function CartProduct({ title, img, price, quantity }: ICartProduct) {
           <ButtonStyled onClick={handleRemoveCard}>
             <img src="./assets/del.svg" alt="del" />
           </ButtonStyled>
-          <Price>{price} ₽</Price>
+          <Price>{total} ₽</Price>
         </CartProductBox>
       </Content>
     </CardContent>

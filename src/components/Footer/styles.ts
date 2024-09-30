@@ -145,10 +145,6 @@ export const StyledList = styled.ul`
 
 export const StyledListItem = styled.li`
   list-style-type: none;
-
-  &:hover {
-    opacity: 0.7;
-  }
 `;
 export const FooterLink = styled(Link)`
   text-decoration: none;
@@ -159,4 +155,7 @@ export const FooterLink = styled(Link)`
   text-align: left;
   text-decoration: none;
   color: #000000;
+  &:hover {
+    opacity: 0.5;
+  }
 `;
