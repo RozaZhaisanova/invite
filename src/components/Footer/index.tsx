@@ -10,18 +10,14 @@ import {
   StyledList,
   StyledListItem,
   FooterLink,
-  StyledTypography,
   SocialIcons,
   SocialLink,
-  PhoneLink,
   ColumnRight,
   SelectedButtonStyled,
   MobSocialIcons,
   LangSelector,
   MobFooterContainer,
   MobFooterContent,
-  MobPhoneLink,
-  MobSocialLink,
   MobStyledList,
   MobStyledListItem,
   LanguageTitle,
@@ -29,7 +25,6 @@ import {
 import i18n from "../../contexts/i18n";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { Box } from "@mui/material";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -61,7 +56,11 @@ const Footer = () => {
               </StyledList>
             </Column>
             <ColumnRight>
-              <StyledTypography>{t("termsOfService")}</StyledTypography>
+              <StyledListItem>
+                <FooterLink to="/termsOfService">
+                  {t("termsOfService")}
+                </FooterLink>
+              </StyledListItem>
               <LangSelector>
                 <img src="./assets/globus.png" alt="Иконка глобуса" />
                 {selectedLanguage === "ru" ? (
@@ -113,33 +112,33 @@ const Footer = () => {
             >
               <img src="./assets/Telegram.svg" alt="Telegram" />
             </SocialLink>
-            <PhoneLink href="tel:+79805304119">
+            <SocialLink href="tel:+79805304119">
               <img src="./assets/Whatsapp.svg" alt="Whatsapp" />
-            </PhoneLink>
+            </SocialLink>
           </SocialIcons>
         </FooterContainer>
       ) : (
         <MobFooterContainer>
           <MobSocialIcons>
-            <MobSocialLink
+            <SocialLink
               href="https://vk.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="VK"
             >
               <img src="./assets/VK.svg" alt="VK" />
-            </MobSocialLink>
-            <MobSocialLink
+            </SocialLink>
+            <SocialLink
               href="https://t.me/fonelor"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
             >
               <img src="./assets/Telegram.svg" alt="Telegram" />
-            </MobSocialLink>
-            <MobPhoneLink href="tel:+79805304119" aria-label="WhatsApp">
+            </SocialLink>
+            <SocialLink href="tel:+79805304119" aria-label="WhatsApp">
               <img src="./assets/Whatsapp.svg" alt="WhatsApp" />
-            </MobPhoneLink>
+            </SocialLink>
           </MobSocialIcons>
 
           <LangSelector>

@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const MobFooterContainer = styled.footer`
   padding: 20px;
   background-color: #a0a0a0;
-  color: white;
   text-align: center;
 `;
 
@@ -14,20 +13,6 @@ export const MobSocialIcons = styled.div`
 
   & a {
     margin: 0 10px;
-  }
-`;
-
-export const MobSocialLink = styled.a`
-  img {
-    width: 24px;
-    height: 24px;
-  }
-`;
-
-export const MobPhoneLink = styled.a`
-  img {
-    width: 24px;
-    height: 24px;
   }
 `;
 
@@ -50,27 +35,6 @@ export const MobStyledListItem = styled.li`
   margin: 5px 0;
 `;
 
-export const MobFooterLink = styled(Link)`
-  color: white;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-export const MobSiteName = styled.div`
-  margin-top: 10px;
-`;
-
-export const MobLogo = styled(Link)`
-  font-size: 24px;
-  color: white;
-`;
-
-export const MobStyledTypography = styled.p`
-  font-size: 12px;
-`;
 export const FooterContainer = styled.footer`
   box-shadow: 0px 0px 20px 0px #0000001a;
   width: 1110px;
@@ -90,21 +54,17 @@ export const FooterContainer = styled.footer`
 `;
 
 export const SocialLink = styled.a`
-  text-decoration: none;
-  color: #007bff;
   &:hover {
     opacity: 0.7;
   }
-`;
-
-export const PhoneLink = styled.a`
-  text-decoration: none;
-  color: #007bff;
-
-  &:hover {
-    opacity: 0.7;
+  @media (max-width: 600px) {
+    img {
+      width: 24px;
+      height: 24px;
+    }
   }
 `;
+
 export const FooterContent = styled.div`
   @media (min-width: 579px) {
     display: flex;
@@ -173,34 +133,19 @@ export const LanguageTitle = styled.h3`
   line-height: 18.29px;
 `;
 export const StyledList = styled.ul`
-  list-style-type: none;
   padding: 0;
   margin: 0;
   gap: 10px;
   width: 101px;
   height: 82.8px;
-  top: 1513.72px;
-  left: 529px;
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  opacity: 0px;
 `;
-export const StyledTypography = styled.p`
-  font-family: Montserrat;
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 20.72px;
-  text-align: left;
-  text-decoration: none;
-`;
+
 export const StyledListItem = styled.li`
-  font-family: Montserrat;
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 20.72px;
-  text-align: left;
-  text-decoration: none;
+  list-style-type: none;
+
   &:hover {
     opacity: 0.7;
   }
