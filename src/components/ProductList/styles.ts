@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { size } from "../../styles/mixins";
 export const ProductGrid = styled.div`
   display: grid;
   width: 100%;
@@ -50,15 +51,12 @@ export const ContainerStyled = styled.main`
   }
 `;
 export const CardStyled = styled.div`
+  ${size(350, 406.81)}
   box-shadow: 0px 0px 20px 0px #0000001a;
   background: #ffffff;
-  width: 350px;
-  height: 406.81px;
   border-radius: 30px;
   @media (max-width: 1200px) {
-    width: 320px;
-    height: 376.81px;
-  }
+      ${size(320, 376.81)}
 `;
 export const CatalogTitle = styled.h2`
   font-family: Montserrat;

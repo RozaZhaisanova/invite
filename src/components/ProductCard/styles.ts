@@ -1,7 +1,6 @@
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
 export const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between;
