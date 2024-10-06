@@ -56,7 +56,6 @@ export const Content = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: space-between;
   justify-content: space-between;
 `;
 export const CartProductMiddle = styled.div`

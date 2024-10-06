@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { size } from "../../styles/mixins";
 export const ProductGrid = styled.div`
@@ -24,22 +23,7 @@ export const ProductGrid = styled.div`
     grid-template-columns: minmax(290px, 320px);
   }
 `;
-export const HeaderStyled = styled.header`
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #f8f8f8;
-`;
 
-export const Logo = styled(Link)`
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: #333;
-
-  &:hover {
-    color: #007bff;
-  }
-`;
 export const ContainerStyled = styled.main`
   max-width: 1110px;
   @media (min-width: 1001px) and (max-width: 1200px) {
