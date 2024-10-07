@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/invite/static/css/main.5f269e24.css",
+    "main.js": "/invite/static/js/main.03ce646a.js",
+    "static/js/453.c2cb78ff.chunk.js": "/invite/static/js/453.c2cb78ff.chunk.js",
+    "index.html": "/invite/index.html",
+    "main.03ce646a.js.map": "/invite/static/js/main.03ce646a.js.map",
+    "453.c2cb78ff.chunk.js.map": "/invite/static/js/453.c2cb78ff.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f269e24.css",
+    "static/js/main.03ce646a.js"
+  ]
+}
